@@ -16,7 +16,7 @@ $leftWidth: 220px;
 
 
 body {
-  font-family: 'NanumBarunGothic', Raleway, sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 16px;
   line-height: 1.2em;
   margin: 0;
@@ -71,6 +71,7 @@ main {
 
   .content {
     @media screen and (min-width: $mobileW + 1) {
+      font-family: Raleway, "NanumBarunGothic", serif;
       max-width: calc(100% - #{$leftWidth});
       margin-left: $leftWidth;
       width: 100%;
