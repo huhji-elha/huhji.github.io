@@ -1,7 +1,7 @@
 title: Your awesome title
 author: jihyun-huh
 email: huhji.elha@gmail.com
-remote_theme: samarsault/plainwhite-jekyll
+# remote_theme: samarsault/plainwhite-jekyll
 
 description: > # this means to ignore newlines until "show_exerpts:"
   Write an awesome description for your new site here. You can edit this

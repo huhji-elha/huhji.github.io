@@ -1,4 +1,5 @@
 @font-face {
+  font-family: 'NanumBarunGothic';
   font-family: 'fontello';
   src: url('../font/fontello.eot?37382099');
   src: url('../font/fontello.eot?37382099#iefix') format('embedded-opentype'),
@@ -6,6 +7,11 @@
        url('../font/fontello.woff?37382099') format('woff'),
        url('../font/fontello.ttf?37382099') format('truetype'),
        url('../font/fontello.svg?37382099#fontello') format('svg');
+
+  src: url('/fonts/NanumBarunGothic.eot');
+  src: url('/fonts/NanumBarunGothic.eot') format('embedded-opentype'),
+       url('/fonts/NanumBarunGothic.woff') format('woff');}
+  
   font-weight: normal;
   font-style: normal;
 }
