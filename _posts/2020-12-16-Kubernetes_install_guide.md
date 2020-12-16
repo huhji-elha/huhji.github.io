@@ -11,12 +11,12 @@ categories: Kubernetes Docker k9s
 
 ### Kubernetes flow diagram
 
-![](\_posts\image\Untitled.png)
+![](_posts/image/Untitled.png)
 [https://blog.heptio.com/core-kubernetes-jazz-improv-over-orchestration-a7903ea92ca](https://blog.heptio.com/core-kubernetes-jazz-improv-over-orchestration-a7903ea92ca)
 
 ### Kubernetes Pod
 
-![](\_posts\image\Untitled%201.png)
+![](_posts/image/Untitled%201.png)
 
 ### Kubernetes 설치
 
