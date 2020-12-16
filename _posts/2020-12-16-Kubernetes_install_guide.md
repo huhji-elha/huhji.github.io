@@ -2,22 +2,21 @@
 layout: post
 title:  "Kubernetes Install : On-Premise Master&Worker"
 date:   2019-03-23 21:03:36 +0530
-categories: Javascript NodeJS
+categories: Kubernetes Docker k9s
 ---
 
-온프레미스 서버에 마스터와 워커 노드 설치하고 연결하기 + k9s 설치까지!
+🧚‍♂️ 온프레미스 서버에 마스터와 워커 노드 설치하고 연결하기 + k9s 설치까지!
 
 
 
 ### Kubernetes flow diagram
 
-![Kubernetes%20basic%20ce8d4a90982c45eea4dd24b02319a583/Untitled.png](./image/Untitled.png)
-
+![](./image/Untitled.png)
 [https://blog.heptio.com/core-kubernetes-jazz-improv-over-orchestration-a7903ea92ca](https://blog.heptio.com/core-kubernetes-jazz-improv-over-orchestration-a7903ea92ca)
 
 ### Kubernetes Pod
 
-![Kubernetes%20basic%20ce8d4a90982c45eea4dd24b02319a583/Untitled%201.png](./image/Untitled%201.png)
+![](./image/Untitled%201.png)
 
 ### Kubernetes 설치
 
@@ -26,11 +25,20 @@ On-premise 환경에서 kubernetes를 사용하면 쿠버네티스를 포함한 
 쿠버네티스와 서버 인프라를 세밀한 부분까지 설정해 원하는 대로 구성할 수 있다는 것이 장점이지만, 모든 관리를 직접 해야 하므로 운영 및 유지보수가 복잡해질 수 있다는 단점이 있다.
 kubespray, kubeadm 등의 도구를 이용해 자체 서버 환경의 쿠버네티스를 설치할 수 있다.
 
-[ K8s 도구 특징 비교](https://www.notion.so/c01f29a824434bdda50e41f0c79a6532)
+## K8s 도구 특징 비교
+
+
+| Kubernetes 설치 도구 또는 서비스 | 특징 |
+| :----- | :------- |
+| Docker for Mac/Windows<br/> Minikube | - 1개의 노드에서 K8s 설치 및 사용 <br/>- 간편하게 로컬에서 K8s의 기본 기능 테스트 가능 <br/>- K8s의 일부 기능이 제한될 수 있음|
+|GKE, EKS 등의 <br/> 완전 관리형 서비스 | - 설치가 필요 없기 때문에 쉽게 사용 가능 <br/>- 클라우드 플랫폼에 종속적인 기능도 사용 가능<br/>- 클라우드 사용 비용 및 의존성 증가<br/>- K8s의 자세한 구성을 학습하기에는 적합하지 않음 |
+| kubespray, kubeadm ✅ | - On-premise 환경에서 K8s 설치 가능 <br/>- 클라우드 인프라에도 설치 가능<br/>- 서버 인프라 및 K8s 관리가 다소 어려울 수 있음 |
+|kops | - 특정 클라우드 플랫폼에서 쉽게 K8s 설치 가능<br/>- 서버, 네트워크 등 각종 인프라도 자동으로 프로비저닝|
+
 
 ### kubernetes와 kubeflow 버전 compatible 관계
 
-![Kubernetes%20basic%20ce8d4a90982c45eea4dd24b02319a583/Untitled%202.png](./image/Untitled%202.png)
+![](./image/Untitled%202.png)
 
 [https://github.com/kubeflow/website/issues/2264](https://github.com/kubeflow/website/issues/2264)
 
