@@ -11,12 +11,12 @@ categories: Kubernetes Docker k9s
 
 ### Kubernetes flow diagram
 
-![](/image/Untitled.png)
+![](/_posts/image/Untitled.png)
 [https://blog.heptio.com/core-kubernetes-jazz-improv-over-orchestration-a7903ea92ca](https://blog.heptio.com/core-kubernetes-jazz-improv-over-orchestration-a7903ea92ca)
 
 ### Kubernetes Pod
 
-![](/image/Untitled%201.png)
+![](/_posts/image/Untitled%201.png)
 
 ### Kubernetes 설치
 
@@ -38,7 +38,7 @@ kubespray, kubeadm 등의 도구를 이용해 자체 서버 환경의 쿠버네�
 
 ### kubernetes와 kubeflow 버전 compatible 관계
 
-![](./image/Untitled%202.png)
+![](/_posts/image/Untitled%202.png)
 
 [https://github.com/kubeflow/website/issues/2264](https://github.com/kubeflow/website/issues/2264)
 
