@@ -146,7 +146,7 @@ kubeadm init --apiserver-advertise-address {master node server} \
 ```
 
 초기화가 완료되면 다음과 같은 출력 결과를 확인할 수 있다. 
-마지막 줄의 kubeadm join —token 이후에 나오는 명령어는 worker node에서 master node로 연결할 때 필요한 명령어이다.
+마지막 줄의 `kubeadm join —token` 이후에 나오는 명령어는 worker node에서 master node로 연결할 때 필요한 명령어이다.
 
 ![](.\image\Untitled3.png)
 
@@ -259,7 +259,7 @@ kubeadm join 175.197.5.65:6443 --token gdio28.~~~~ \
 
 ![](./image/Untitled5.png)
 
-✅ Master에서 연결된 worker node 확인! `kubectl get nodes` 명령어로 확인한다.
+✅ Master에서 연결된 worker node 확인! <code>kubectl get nodes</code> 명령어로 확인한다.
 
 ![](./image/Untitled6.png)
 
