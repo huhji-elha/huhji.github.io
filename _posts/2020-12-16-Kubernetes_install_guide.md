@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Kubernetes Install : On-Premise Master&Worker"
-date:   2019-03-23 21:03:36 +0530
+title:  "Kubernetes Install : On-Premise Server with Master&Worker Node"
+date:   2020-12-16 23:03:36 +0530
 categories: Kubernetes Docker k9s
 ---
 
