@@ -11,18 +11,21 @@ categories: Kubernetes Docker k9s
 
 ### Kubernetes flow diagram
 
-![](/_posts/image/Untitled.png)
+![](\_posts\image\Untitled.png)
 [https://blog.heptio.com/core-kubernetes-jazz-improv-over-orchestration-a7903ea92ca](https://blog.heptio.com/core-kubernetes-jazz-improv-over-orchestration-a7903ea92ca)
 
 ### Kubernetes Pod
 
-![](/_posts/image/Untitled%201.png)
+![](\_posts\image\Untitled%201.png)
 
 ### Kubernetes 설치
 
-개발 용도가 아닌 실제 서비스 테스트와 운영 용도로 쿠버네티스를 사용할 목적으로 설치, 자체 서버 환경(on-premise)에서 사용하기로 결정했다. 
+개발 용도가 아닌 실제 서비스 테스트와 운영 용도로 쿠버네티스를 사용할 목적으로 설치해야한다. 
+그것도 자체 서버 환경(on-premise)에서 사용하기로 결정.
+
 On-premise 환경에서 kubernetes를 사용하면 쿠버네티스를 포함한 모든 인프라를 직접 관리해야 한다. 
-쿠버네티스와 서버 인프라를 세밀한 부분까지 설정해 원하는 대로 구성할 수 있다는 것이 장점이지만, 모든 관리를 직접 해야 하므로 운영 및 유지보수가 복잡해질 수 있다는 단점이 있다.
+서버 인프라를 세밀한 부분까지 설정해 원하는 대로 구성할 수 있다는 것이 장점이지만, 모든 관리를 직접 해야 하므로 운영 및 유지보수가 복잡해질 수 있다는 단점이 있다
+
 kubespray, kubeadm 등의 도구를 이용해 자체 서버 환경의 쿠버네티스를 설치할 수 있다.
 
 ## K8s 도구 특징 비교
@@ -38,7 +41,7 @@ kubespray, kubeadm 등의 도구를 이용해 자체 서버 환경의 쿠버네�
 
 ### kubernetes와 kubeflow 버전 compatible 관계
 
-![](/_posts/image/Untitled%202.png)
+![](\_posts\image\Untitled%202.png)
 
 [https://github.com/kubeflow/website/issues/2264](https://github.com/kubeflow/website/issues/2264)
 
