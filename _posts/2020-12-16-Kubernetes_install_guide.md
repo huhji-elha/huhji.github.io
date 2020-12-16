@@ -11,12 +11,12 @@ categories: Kubernetes Docker k9s
 
 ### Kubernetes flow diagram
 
-![](./image/Untitled.png)
+![](/image/Untitled.png)
 [https://blog.heptio.com/core-kubernetes-jazz-improv-over-orchestration-a7903ea92ca](https://blog.heptio.com/core-kubernetes-jazz-improv-over-orchestration-a7903ea92ca)
 
 ### Kubernetes Pod
 
-![](./image/Untitled%201.png)
+![](/image/Untitled%201.png)
 
 ### Kubernetes 설치
 
@@ -28,7 +28,7 @@ kubespray, kubeadm 등의 도구를 이용해 자체 서버 환경의 쿠버네�
 ## K8s 도구 특징 비교
 
 
-| Kubernetes 설치 도구 또는 서비스 | 특징 |
+| <center>Kubernetes 설치 도구 또는 서비스</center> | <center>특징</center> |
 | :----- | :------- |
 | Docker for Mac/Windows<br/> Minikube | - 1개의 노드에서 K8s 설치 및 사용 <br/>- 간편하게 로컬에서 K8s의 기본 기능 테스트 가능 <br/>- K8s의 일부 기능이 제한될 수 있음|
 |GKE, EKS 등의 <br/> 완전 관리형 서비스 | - 설치가 필요 없기 때문에 쉽게 사용 가능 <br/>- 클라우드 플랫폼에 종속적인 기능도 사용 가능<br/>- 클라우드 사용 비용 및 의존성 증가<br/>- K8s의 자세한 구성을 학습하기에는 적합하지 않음 |
@@ -42,7 +42,7 @@ kubespray, kubeadm 등의 도구를 이용해 자체 서버 환경의 쿠버네�
 
 [https://github.com/kubeflow/website/issues/2264](https://github.com/kubeflow/website/issues/2264)
 
-👉 Kubernetes 1.15와 Kubeflow 1.0으로 결정(비교적 stable 하다고 한다 - 이슈 피셜)
+👉 Kubernetes 1.15와 Kubeflow 1.0으로 결정(비교적 stable 하다고 한다 - 이슈 피셜) <br/>
 👉 Ubuntu 20.04 LTS 환경에 설치
 
 ## Master&Worker 공통 사항
