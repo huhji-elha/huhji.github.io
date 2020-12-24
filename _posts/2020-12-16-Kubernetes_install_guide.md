@@ -11,16 +11,16 @@ categories: Kubernetes Docker k9s
 
 ### Kubernetes flow diagram
 
-![](_posts/image/Untitled.png)
+![img1](image/Untitled.png)
 [https://blog.heptio.com/core-kubernetes-jazz-improv-over-orchestration-a7903ea92ca](https://blog.heptio.com/core-kubernetes-jazz-improv-over-orchestration-a7903ea92ca)
 
 ### Kubernetes Pod
 
-![](_posts/image/Untitled%201.png)
+![img2](image/Untitled%201.png)
 
 ### Kubernetes 설치
 
-개발 용도가 아닌 실제 서비스 테스트와 운영 용도로 쿠버네티스를 사용할 목적으로 설치해야한다. 
+개발 용도가 아닌 실제 서비스 테스트와 운영 용도로 쿠버네티스를 설치해야한다. 
 그것도 자체 서버 환경(on-premise)에서 사용하기로 결정.
 
 On-premise 환경에서 kubernetes를 사용하면 쿠버네티스를 포함한 모든 인프라를 직접 관리해야 한다. 
@@ -41,7 +41,7 @@ kubespray, kubeadm 등의 도구를 이용해 자체 서버 환경의 쿠버네�
 
 ### kubernetes와 kubeflow 버전 compatible 관계
 
-![](\_posts\image\Untitled%202.png)
+![img3](image/Untitled%202.png)
 
 [https://github.com/kubeflow/website/issues/2264](https://github.com/kubeflow/website/issues/2264)
 
@@ -148,7 +148,7 @@ kubeadm init --apiserver-advertise-address {master node server} \
 초기화가 완료되면 다음과 같은 출력 결과를 확인할 수 있다. 
 마지막 줄의 `kubeadm join —token` 이후에 나오는 명령어는 worker node에서 master node로 연결할 때 필요한 명령어이다.
 
-![](.\image\Untitled3.png)
+![img4](/image/Untitled3.png)
 
 중간의 `mkdir -p $HOME/.kube` 부터 시작하는 3줄의 명령어를 master node에서 실행시켜준다.
 
@@ -194,7 +194,7 @@ kubectl apply -f calico.yaml
 
 다음은 실행 결과 출력된 내용이다.
 
-![](./image/Untitled4.png)
+![img5](/image/Untitled4.png)
 ## Worker node 설정
 
 **선행조건 : Nvidia Driver가 설치되어 있어야한다.**
@@ -257,11 +257,11 @@ kubeadm join 175.197.5.65:6443 --token gdio28.~~~~ \
 
 연결 성공시 다음과 같은 결과 출력
 
-![](./image/Untitled5.png)
+![img6](image/Untitled5.png)
 
 ✅ Master에서 연결된 worker node 확인! <code>kubectl get nodes</code> 명령어로 확인한다.
 
-![](./image/Untitled6.png)
+![img7](image/Untitled6.png)
 
 ### GPU Device Plug-in 설정
 
