@@ -23,7 +23,7 @@ plainwhite:
   portfolio_image: "assets/profile03.jpg" # the path from the base directory of the site to the image to display (no / at the start)
   html_lang: "KR" # set the lang attribute of the <html> tag for the pages. See here for a list of codes: https://www.w3schools.com/tags/ref_country_codes.asp
   condensed_mobile:
-    #- home
+    - home
     - page
     - post
   # generate social links in footer
@@ -59,8 +59,38 @@ plainwhite:
 
 # Build settings
 #theme: plainwhite
+comments:
+  provider : "disqus" # 블로그 댓글 기능 false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
+  disqus:
+    shortname : "elha-tech-blog"
 
-disqus_shortname: elha-tech-blog
 plugins:
   - jekyll-seo-tag
 #  - jekyll-feed
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+      toc_ads: true
+      toc_sticky: true
+
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+      read_time: false
+      comments: false
+      share: true
+      related: false
