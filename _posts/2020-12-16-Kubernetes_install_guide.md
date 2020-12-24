@@ -16,10 +16,7 @@ categories: Kubernetes Docker k9s
 
 ### Kubernetes Pod
 
-![img2](./images/Untitled1.png)
-![img2](https://user-images.githubusercontent.com/59910975/103050938-f7592880-45d8-11eb-84cd-c8edad711ce3.jpg)
-<img src="images/untitled1.PNG" width="100%"/>
-<!-- <a href="image/Untitled%201.png"> -->
+![img2](https://user-images.githubusercontent.com/59910975/103050945-f88a5580-45d8-11eb-9af6-a00fa726c647.png)
 
 ### Kubernetes 설치
 
@@ -44,7 +41,7 @@ kubespray, kubeadm 등의 도구를 이용해 자체 서버 환경의 쿠버네�
 
 ### kubernetes와 kubeflow 버전 compatible 관계
 
-![img3](image/Untitled%202.png)
+![img3](https://user-images.githubusercontent.com/59910975/103050946-f922ec00-45d8-11eb-8207-82bd6b770de0.png)
 
 [https://github.com/kubeflow/website/issues/2264](https://github.com/kubeflow/website/issues/2264)
 
@@ -151,7 +148,7 @@ kubeadm init --apiserver-advertise-address {master node server} \
 초기화가 완료되면 다음과 같은 출력 결과를 확인할 수 있다. 
 마지막 줄의 `kubeadm join —token` 이후에 나오는 명령어는 worker node에서 master node로 연결할 때 필요한 명령어이다.
 
-![img4](/image/Untitled3.png)
+![img4](https://user-images.githubusercontent.com/59910975/103050949-f922ec00-45d8-11eb-95df-4784d1f1eb99.png)
 
 중간의 `mkdir -p $HOME/.kube` 부터 시작하는 3줄의 명령어를 master node에서 실행시켜준다.
 
@@ -197,7 +194,7 @@ kubectl apply -f calico.yaml
 
 다음은 실행 결과 출력된 내용이다.
 
-![img5](/image/Untitled4.png)
+![img5](https://user-images.githubusercontent.com/59910975/103050951-f9bb8280-45d8-11eb-953a-b4fdb8611c26.png)
 ## Worker node 설정
 
 **선행조건 : Nvidia Driver가 설치되어 있어야한다.**
@@ -260,11 +257,11 @@ kubeadm join 175.197.5.65:6443 --token gdio28.~~~~ \
 
 연결 성공시 다음과 같은 결과 출력
 
-![img6](image/Untitled5.png)
+![img6](https://user-images.githubusercontent.com/59910975/103050952-f9bb8280-45d8-11eb-8327-056a89743a38.png)
 
 ✅ Master에서 연결된 worker node 확인! <code>kubectl get nodes</code> 명령어로 확인한다.
 
-![img7](image/Untitled6.png)
+![img7](https://user-images.githubusercontent.com/59910975/103050953-fa541900-45d8-11eb-814e-0c36ac1813da.png)
 
 ### GPU Device Plug-in 설정
 
