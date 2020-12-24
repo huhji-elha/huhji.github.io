@@ -17,6 +17,7 @@ categories: Kubernetes Docker k9s
 ### Kubernetes Pod
 
 ![img2](./images/Untitled1.png)
+![img2](./images/untitled.jpg)
 <img src="images/untitled1.PNG" width="100%"/>
 <!-- <a href="image/Untitled%201.png"> -->
 
