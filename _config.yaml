@@ -15,7 +15,7 @@ sass:
   sass_dir: _sass
 plainwhite:
   name: El-ha!
-  tagline: Developer. Designer
+  tagline: Developer. ML Engineer
   date_format: "%b %-d, %Y"
   sitemap: true # set to true to generate sitemap.xml content
   search: true # set to true to enable searchbar
@@ -58,7 +58,7 @@ plainwhite:
 # - about.md
 
 # Build settings
-#theme: plainwhite
+theme: plainwhite
 plainwhite:
   disqus_shortname: elha-tech-blog
 
