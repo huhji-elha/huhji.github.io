@@ -16,7 +16,8 @@ categories: Kubernetes Docker k9s
 
 ### Kubernetes Pod
 
-![img2](.\image\Untitled1.png)
+<!-- ![img2](.\image\Untitled1.png) -->
+<img src=".\image\Untitled1.png">
 <!-- <a href="image/Untitled%201.png"> -->
 
 ### Kubernetes 설치
