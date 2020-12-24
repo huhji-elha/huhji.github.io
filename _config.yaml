@@ -60,6 +60,7 @@ plainwhite:
 # Build settings
 #theme: plainwhite
 
+disqus_shortname: elha-tech-blog
 plugins:
   - jekyll-seo-tag
 #  - jekyll-feed
