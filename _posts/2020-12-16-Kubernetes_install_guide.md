@@ -16,7 +16,7 @@ categories: Kubernetes Docker k9s
 
 ### Kubernetes Pod
 
-![img2](.\image\Untitled%201.png)
+![img2](.\image\Untitled1.png)
 <!-- <a href="image/Untitled%201.png"> -->
 
 ### Kubernetes 설치
@@ -109,10 +109,10 @@ $ vi /etc/fstab
 
 👇여기서부터 master와 worker 설정이 달라집니다.
 
+## Kubernetes Master 설치
+
 설치 순서 : 
 Swap 설정 ▶️ K8s 저장소 추가 ▶️ Docker 설치 ▶️  K8s 설치
-
-## Kubernetes Master 설치
 
 ### Kubernetes 실행 파일 설치
 
