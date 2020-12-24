@@ -21,7 +21,7 @@ plainwhite:
   portfolio_image: "assets/profile03.jpg" # the path from the base directory of the site to the image to display (no / at the start)
   html_lang: "KR" # set the lang attribute of the <html> tag for the pages. See here for a list of codes: https://www.w3schools.com/tags/ref_country_codes.asp
   condensed_mobile:
-    #- home
+    - home
     - page
     - post
   # generate social links in footer
@@ -41,6 +41,7 @@ plainwhite:
     #gitlab: jekyll
     sitemap : true
     show_excerpts : true
+    disqus_shortname: elha-tech-blog
     # Mastodon instances
     # mastodon:
     # - username: jekyll
@@ -55,9 +56,6 @@ plainwhite:
 
 # Build settings
 # theme: plainwhite
-plainwhite:
-  disqus_shortname: elha-tech-blog
-
 plugins:
   - jekyll-seo-tag
 #  - jekyll-feed
