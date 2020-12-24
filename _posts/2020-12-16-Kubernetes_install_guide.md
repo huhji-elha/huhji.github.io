@@ -11,13 +11,13 @@ categories: Kubernetes Docker k9s
 
 ### Kubernetes flow diagram
 
-![img1](./image/Untitled.png)
+![img1](https://user-images.githubusercontent.com/59910975/103050942-f88a5580-45d8-11eb-9896-84e442ff1542.png)
 [https://blog.heptio.com/core-kubernetes-jazz-improv-over-orchestration-a7903ea92ca](https://blog.heptio.com/core-kubernetes-jazz-improv-over-orchestration-a7903ea92ca)
 
 ### Kubernetes Pod
 
 ![img2](./images/Untitled1.png)
-![img2](./images/untitled.jpg)
+![img2](https://user-images.githubusercontent.com/59910975/103050938-f7592880-45d8-11eb-84cd-c8edad711ce3.jpg)
 <img src="images/untitled1.PNG" width="100%"/>
 <!-- <a href="image/Untitled%201.png"> -->
 
