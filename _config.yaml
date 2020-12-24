@@ -59,6 +59,8 @@ plainwhite:
 
 # Build settings
 #theme: plainwhite
+plainwhite:
+  disqus_shortname: elha-tech-blog
 comments:
   provider : "disqus" # 블로그 댓글 기능 false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   disqus:
