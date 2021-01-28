@@ -13,11 +13,13 @@
 }
 
 @font-face {
-  font-family : 'NanumBarunGothic';
+  font-family: 'NanumBarunGothic';
 
   src: url('/fonts/NanumBarunGothic.eot');
   src: url('/fonts/NanumBarunGothic.eot') format('embedded-opentype'),
        url('/fonts/NanumBarunGothic.woff') format('woff');
+  unicode-range: UxAC00-D7AF;
+  font-style: normal;
 
 }
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
