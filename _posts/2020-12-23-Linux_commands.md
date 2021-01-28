@@ -75,18 +75,20 @@ du -sh * : 서브 디렉토리 기준으로 사용량 출력
 ### Linux 서버 기본 정보 확인
 
 ```python
-# ubuntu cpu 정보
-$ cat /proc/cpuinfo
-or
-$ sudo smidecode -t processor | more
+# ubuntu cpu 정보 첫번째 방법
+cat /proc/cpuinfo
+
+# ubuntu cpu 정보 확인 두번째 방법
+sudo smidecode -t processor | more
+
 # ubuntu cpu node 정보 확인
-$ cat /proc/cpuinfo | grep "model name"
+cat /proc/cpuinfo | grep "model name"
 
 # ubuntu RAM 사양 확인
-$ sudo dimdecode -t memory | more
+sudo dimdecode -t memory | more
 
 # linux 전체 용량 확인 - GB 단위
-$ df -P | grep -v ^Filesystem | awk '{sum += $2} END { print sum/1024/1024 " GB" }'
+df -P | grep -v ^Filesystem | awk '{sum += $2} END { print sum/1024/1024 " GB" }'
 ```
 
 ### 파일 일부만 조회하고 싶을 때
@@ -178,7 +180,7 @@ unzip -qq filename
 
 ```bash
 # zshell plugin 설정하기
-$ vim ~/.zshrc
+vim ~/.zshrc
 ```
 
 ### remove Linus package
@@ -239,19 +241,19 @@ netstat -ltu
 
 ```bash
 # cpu 정보 확인
-$ cat /proc/cpuinfo
+cat /proc/cpuinfo
 
 # cpu 코어 전체 개수 확인
-$ grep -c processor /proc/cpuinfo
+grep -c processor /proc/cpuinfo
 > 48
 # 가상 cpu 코어 개수는 48.
 
 # 물리 cpu 수 확인
-$ grep "physical id" /proc/cpuinfo | sort -u | wc -l
+grep "physical id" /proc/cpuinfo | sort -u | wc -l
 > 2
 
 # cpu 당 물리 코어 수 확인
-$ grep "cpu cores" /proc/cpuinfo | tail -1
+grep "cpu cores" /proc/cpuinfo | tail -1
 > 12
 
 # 물리 cpu 수 : 2
@@ -296,14 +298,14 @@ kill -STOP 25049
 ![img02](https://user-images.githubusercontent.com/59910975/106130463-b7233200-61a4-11eb-8505-95b9b9f2bc03.png)
 
 ```bash
-$ top
+top
 # 실행 후 더이상 PID에 바이러스 파일이 뜨지 않는 것을 확인하고(kill -STOP 명령 후)
 
-$ rm -f /etc/cron.hourly/gcc.sh
-$ rm -f /bin/obguwqpsgn
-$ rm -f /etc/init.d/obguwqpsgn
+rm -f /etc/cron.hourly/gcc.sh
+rm -f /bin/obguwqpsgn
+rm -f /etc/init.d/obguwqpsgn
 
-$ reboot
+reboot
 # 끝!
 # 이렇게 해도 바이러스가 계속 남아있다면 리눅스 초기화뿐..
 ```
