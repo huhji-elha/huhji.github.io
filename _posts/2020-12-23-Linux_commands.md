@@ -119,10 +119,10 @@ docker run --gpus '"device=0,1"' --name=myname --shm-size 8G --restart=always -i
 
 ### docker run 상세 설명
 `--gpus` : docker에 할당할 GPU 번호. 한개일 땐 번호 하나만 써도 되지만 여러개일 땐 따옴표 두 개를 써줘야한다. `ex. '"device=1,2"'` <br/>
-`--name=myname`: myname 자리에 docker 이름 써주기 <br/>
-`--shm-size`: RAM 사이즈 할당 <br/>
-`--restart=always`: Docker가 꺼지더라도 바로 다시 시작하는 옵션, `run` 명령어 후 `docker start`하지 않아도 바로 도커에 접속할 수 있다. <br/>
-`-p`: Docker에서 열어주는 포트(포트 포워딩) `22`번은 외부에서 기본으로 접속하는 포트, `6006`은 tensorboard, `8888`은 jupyter notebook, `8889`는 여분 포트 (주로 장고용 포트로 사용)
+`--name=myname` : myname 자리에 docker 이름 써주기 <br/>
+`--shm-size` : RAM 사이즈 할당 <br/>
+`--restart=always` : Docker가 꺼지더라도 바로 다시 시작하는 옵션, `run` 명령어 후 `docker start`하지 않아도 바로 도커에 접속할 수 있다. <br/>
+`-p` : Docker에서 열어주는 포트(포트 포워딩) `22`번은 외부에서 기본으로 접속하는 포트, `6006`은 tensorboard, `8888`은 jupyter notebook, `8889`는 여분 포트 (주로 장고용 포트로 사용)
 
 
 ### SSH 접속을 위한 Docker 초기 세팅
