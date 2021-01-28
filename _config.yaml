@@ -21,8 +21,9 @@ plainwhite:
   portfolio_image: "assets/profile03.jpg" # the path from the base directory of the site to the image to display (no / at the start)
   html_lang: "KR" # set the lang attribute of the <html> tag for the pages. See here for a list of codes: https://www.w3schools.com/tags/ref_country_codes.asp
   disqus_shortname: elha-tech-blog
-  markdown: kramdown
-  highlighter: rouge
+  kramdown:
+    input: GFM
+    syntax_highlighter: rouge
   redcarpet:
     extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "with_toc_data"]
   condensed_mobile:
