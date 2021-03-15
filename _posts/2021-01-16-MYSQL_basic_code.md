@@ -292,7 +292,7 @@ mysql > CREATE TABLE TB_MODELS(
 
 ## Django에 기존 SQL 연결하기 (MariaDB 사용, Mysql과 동일)
 
-- settings.py에 DB 정보 입력
+- .env 파일에 DB 정보 저장
 
 ```python
 # .env
@@ -302,7 +302,9 @@ MARIA_DB_USER=huhji
 MARIA_DB_PASSWORD=1234
 MARIA_DB_HOST=123.456.78.9
 MARIA_DB_PORT=3306
+
 ```
+- settings.py에 DB 정보 입력
 
 ```python
 # settings.py
