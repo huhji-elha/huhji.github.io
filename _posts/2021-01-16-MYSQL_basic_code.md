@@ -6,12 +6,11 @@ categories: MYSQL MariaDB Django
 ---
 
 🐢 Mysql 기본 구문과 Django에서 사용하기
+
 _____________________________________
 
 
 # MYSQL basic code
-
-Status: Backend
 
 ### Structured Query Language
 
@@ -199,7 +198,7 @@ mysql> CREATE TABLE tweets(
 # Query OK, 0 rows affected (0.06 sec)
 ```
 
-**기본 명령어 참고**
+### 기본 명령어 참고
 
 - `NOT NULL` : 해당 칼럼은 NULL값이 될 수 없다.
 - `AUTO_INCREMENT` : 해당 칼럼의 값이 자동으로 1씩 증가한다. 주로 id 값을 생성해주기 위해 사용한다.
@@ -233,7 +232,8 @@ SELECT * from Tablename
 
 ![](https://user-images.githubusercontent.com/59910975/111102653-f4deed00-858f-11eb-91cb-064812c9c428.png)
 
-### Django에서 SQL 작성하기
+
+## Django에서 SQL 작성하기
 
 ```python
 # models.py
@@ -289,7 +289,8 @@ mysql > CREATE TABLE TB_MODELS(
         PRIMARY KEY (models_id));
 ```
 
-### Django에 기존 SQL 연결하기 (MariaDB 사용, Mysql과 동일)
+
+## Django에 기존 SQL 연결하기 (MariaDB 사용, Mysql과 동일)
 
 - settings.py에 DB 정보 입력
 

@@ -4,21 +4,31 @@ title:  "MLflow와 MinIO에서 학습 완료된 모델 불러오기 : torch, ten
 date:   2021-02-02 20:11:03 +0530
 categories: MLflow MinIO Pytorch Tensorflow scikit-learn
 ---
-🤹‍♀️ 학습된 모델을 새로운 환경에서 불러와 사용해야할 때
+🤹‍♀️ 학습된 모델을 새로운 환경에서 불러와 사용해야 하는 경우
+
 _____________________________________
 
-**Train module** : K8s에서 학습 ▶️ mlflow를 이용해 학습된 모델을 MinIO에 저장 ▶️ mlflow의 run_uuid를 DB에 저장
 
-**Inference module** : 학습 완료된 모델 중 추론할 모델 선택 ▶️ 선택한 모델에 해당하는 run_uuid 조회 ▶️ MinIO Storage에서 모델 파일 가져오기 ▶️ 저장된 모델 형식에 따라 불러와 추론 진행
+#### 모듈 설계
 
-Tensorflow — .h5로 우선 저장하되, h5 형식으로 저장이 안되는 코드는 checkpoint 형식으로 저장
+- **Train module** : K8s에서 학습 ▶️ mlflow를 이용해 학습된 모델을 MinIO에 저장 ▶️ mlflow의 run_uuid를 DB에 저장
 
-Pytorch — .pth로 저장, 학습한 model 자체를 인스턴스로 저장. torch의 save 모듈이 pickle을 사용하므로 모델 파일(ex. resnet.py)을 경로와 함께 저장하는 것이 필요 (pickle은 파일 구조를 함께 저장한다.)
+- **Inference module** : 학습 완료된 모델 중 추론할 모델 선택 ▶️ 선택한 모델에 해당하는 run_uuid 조회 ▶️ MinIO Storage에서 모델 파일 가져오기 ▶️ 저장된 모델 형식에 따라 불러와 추론 진행
 
-ScikitLearn — .pkl로 저장
+#### 개발 조건 
 
 - MinIO 서버에서 학습된 모델을 불러온다.
 - 기존 학습에 대한 정보가 없는 새로운 K8s Pod에서 추론을 실행하기 때문에 학습한 모델 + 모델 코드 정보가 필요한 상황
+
+
+> Tensorflow — .h5로 우선 저장하되, h5 형식으로 저장이 안되는 코드는 checkpoint 형식으로 저장
+
+> Pytorch — .pth로 저장, 학습한 model 자체를 인스턴스로 저장. torch의 save 모듈이 pickle을 사용하므로 모델 파일(ex. resnet.py)을 경로와 함께 저장하는 것이 필요 (pickle은 파일 구조를 함께 저장한다.)
+
+> ScikitLearn — .pkl로 저장
+
+
+
 
 ## Minio에서 파일 가져오기
 
@@ -33,18 +43,19 @@ class MinioManager:
         self.run_uuid = run_uuid
 
     # model.pth / model.h5 download
-		def load_model_weights(self, weights_file_name):
+	  def load_model_weights(self, weights_file_name):
         weights_path = f"path/{self.run_uuid}/artifacts/model/data/{weights_file_name}"
         self.client.fget_object("storage-path", weights_path, './'+ weights_file_name)
 
     # model.py download
-		def load_model_object(self):
+	  def load_model_object(self):
         model_class_path = f"path/{self.run_uuid}/artifacts/architecture/models/"
         os.makedirs("./models/", exist_ok=True)
         for obj in self.client.list_objects("storage-path", model_class_path, './models/'):
             obj_name = obj.object_name
             if '.pyc' not in obj_name:
                 self.client.fget_object("storage-path", obj_name, './' + obj_name[obj_name.index("models/"):])
+
 ```
 
 ## Tensorflow (2.*)
