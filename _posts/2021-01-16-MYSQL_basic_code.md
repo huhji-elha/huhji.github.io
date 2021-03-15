@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "MYSQL basic code with Django"
-date:   2020-01-16 17:02:11 +0530
+date:   2021-01-16 17:02:11 +0530
 categories: MYSQL MariaDB Django
 ---
 
