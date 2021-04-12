@@ -164,7 +164,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ### coredns 설정
 
 coerdns의 crash는 nameserver 설정오류로 발생한다.
-ubuntu의 경우 static이건 dhcp이건, 모두 `/run/systemd/resolve/resolv.conf` 에 nameserver 설정이 있다.
+ubuntu의 경우 static이나 dhcp 모두 `/run/systemd/resolve/resolv.conf` 에 nameserver 설정이 있다.
 
 ```bash
 # kubelet 설정 파일 열기
