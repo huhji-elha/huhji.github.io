@@ -16,7 +16,9 @@ _____________________________________
 **Deep Learning**은 기본적으로 node 값을 가중치와 연산해서 다음 node로 보내는 연산이다. 
 
 👉 수학적으로는 합성함수의 계산이다. ex) $f(g(h(x)))$
+
 👉 가중치와 node는 선형결합의 형태이다. 따라서 node 연산만을 거치면 Linear하게 데이터를 표현하게 된다. 
+
 👉 하지만 해결해야하는 대부분의 문제는 선형관계가 아니므로(더 복잡한 Non-Linear한 형태이므로) Activation function을 이용해 데이터를 nonlinear하게 표현하는 것이 필요하다.
 
 ## Loss Function이란?
@@ -47,12 +49,12 @@ $f(x)$ 내의 두 점 $x1, x2$를 직선($a$)으로 이었을 때, 두 점 사�
     non-convex, non-smooth한 특성 때문에 Gradient Descent는 적용 못함.
 
 2. $L_{hinge}(f, y) = max\{0, 1-fy\}$
-SVM의 loss function으로 사용된다. $fy$가 1 이상이면 오차를 무시하고, 1 미만이면 오차가 크도록 유도한다.
+    SVM의 loss function으로 사용된다. $fy$가 1 이상이면 오차를 무시하고, 1 미만이면 오차가 크도록 유도한다.
 3. $L_{logistic}(f, y) = \log_{2}(1 + exp(-fy))$
 4. $L_{cross\ entropy}(f, y) = -\log_{2}({1+fy \over 2})$
-분류문제에서 좋은 성능을 낸다. 자세한 내용은 아래에!
+    분류문제에서 좋은 성능을 낸다. 자세한 내용은 아래에!
 5. $L_{square}(f, y) = (f-y)^2$
-convexity의 성질을 갖기 때문에 경사하강법을 통해 최적화가 가능하다.
+    convexity의 성질을 갖기 때문에 경사하강법을 통해 최적화가 가능하다.
 6. $L_{absolute}(f, y) = \left\vert{f-y}\right\vert$
 
     절대값 손실함수는 학습 데이터의 이상치, 특이점에 대해 제곱 손실함수보다 robust하다는 특징을 갖는다. 하지만 y=x에서 미분 불가능하다.
@@ -61,7 +63,9 @@ convexity의 성질을 갖기 때문에 경사하강법을 통해 최적화가 �
 
     Huber 손실함수는 오차가 임곗값($\sigma$, 전형적으로 1)보다 작을 때는 2차함수이고, 오차가 $\sigma$보다 클 때는 선형함수이다. 선형 함수는 square loss보다 이상치에 덜 민감하고, 이차 함수는 absolute loss보다 수렴 속도가 빠르고 정확도가 높다.
 
+
 Loss function은 기본적으로 convexity의 특성을 갖지만, feature들의 스케일이 매우 다르면 Global minimum을 찾는데 더 많은 비용이 소요된다. 때문에 학습 전 데이터의 Scale을 맞추는 것이 매우 중요하다.
+
 
 ## 기본적인 Loss Function의 종류
 
@@ -101,12 +105,11 @@ $norm$의 지수가 클 수록 큰 값의 원소에 치우치며 작은 값은 �
     - 덜 자주 발생하는 사건은 더 높은 정보량을 가진다.
     - 독립사건(independent event)은 추가적인 정보량(additive information)을 가진다. 예컨대 동전을 던져 앞면이 두번 나오는 사건에 대한 정보량은 동전을 던져 앞면이 한번 나오는 정보량의 두 배이다.
 
-*Reference :*
-
-[정보이론 기초](https://ratsgo.github.io/statistics/2017/09/22/information/)
+*Reference :* [정보이론 기초](https://ratsgo.github.io/statistics/2017/09/22/information/)
 
 - 예시 : 용의자를 추정하는데 '용의자의 성이 '김'씨이다'는 정보와 '용의자의 성이 '곽'씨이다'는 정보 중 어느 쪽에 정보가 더 많은가? 
-👉 '곽'씨를 얻었을 때이다. 
+
+    👉 '곽'씨를 얻었을 때이다. 
 즉, 내가 얻는 정보의 양이라는 것은 그 정보의 확률과 반비례한다. 따라서 $y_i$라는 정보 확률에 대해 information gain은 ${1 \over y_i}$인 것이다.
 
 $$H(y) = \sum_iy_i\log{1 \over y_i}$$
@@ -170,6 +173,6 @@ $${\partial{L_{SE}} \over \partial{w}} = {\partial{L_{SE}} \over \partial{\hat y
 
 *Reference:*
 
-- [https://www.youtube.com/watch?v=gIx974WtVb4&t=373s](https://www.youtube.com/watch?v=gIx974WtVb4&t=373s)
+- [Why do we need Cross Entropy Loss?](https://www.youtube.com/watch?v=gIx974WtVb4&t=373s)
 - Hands-On Machine Learning
 - 데이터 과학자와 데이터 엔지니어를 위한 인터뷰 문답집
