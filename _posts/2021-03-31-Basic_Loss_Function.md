@@ -87,7 +87,7 @@ $$MAE={1\over{n}}\sum_{i=1}^n {|\hat{y_i}-y_i|}$$
 
 ### RMSE
 
-$$RMSE = \sqrt{{1 \over n}\sum_{i=1}^{n}(\hat{y_i}-y_i)^2}}$$
+$$RMSE = \sqrt{{1\over{n}}\sum_{i=1}^{n}(\hat{y_i}-y_i)^2}$$
 
 RMSE와 MAE 모두 예측값의 벡터와 타겟값의 벡터 사이의 거리를 구하는 방법이다. RMSE의 경우 n개의 제곱근의 합으로 나타냄으로 유클리디안 거리에 해당한다. $l_2 norm$ 이라고도 하며 $\lVert \cdot \rVert_2$로 표시한다.
 
