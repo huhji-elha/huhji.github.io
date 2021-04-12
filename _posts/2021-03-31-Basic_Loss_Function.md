@@ -3,6 +3,7 @@ layout: post
 title:  "Introduce Basic Loss Function on Machine Learning"
 date:   2021-03-31 15:28:11 +0530
 categories: MSE MAE RMSE Cross-Entropy
+use_math: true
 ---
 🛠 기본적인 머신러닝 손실함수에 대하여
 
