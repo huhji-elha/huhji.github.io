@@ -13,7 +13,7 @@ categories: Kubernetes Docker k9s
 
 ![img1](https://user-images.githubusercontent.com/59910975/103050942-f88a5580-45d8-11eb-9896-84e442ff1542.png)
 
-[cation-link](https://blog.heptio.com/core-kubernetes-jazz-improv-over-orchestration-a7903ea92ca)
+[caption-link](https://blog.heptio.com/core-kubernetes-jazz-improv-over-orchestration-a7903ea92ca)
 
 ### Kubernetes Pod
 
