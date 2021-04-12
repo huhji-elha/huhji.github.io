@@ -80,7 +80,7 @@ MSE는 곡선에서 어떤 두 점을 선택해 선을 그어도 곡선을 가�
 
 ### MAE (Mean Absolute Error)
 
-$$MAE={1 \over n}\sum_{i=1}^n {|\hat{y_i}-y_i|}$$
+# $$MAE={1 \over n}\sum_{i=1}^n {|\hat{y_i}-y_i|}$$
 
 회귀 학습에 사용하는 손실함수에 일반적으로 MSE를 사용하지만 학습 데이터에 이상치가 많다면 MAE를 사용할 수 있다.
 또는 MSE와 MAE를 조합한 Huber 손실을 사용할 수 있다. Huber 손실은 위에서도 언급했지만 특이점에 대해 robust한 특징을 가진다.
