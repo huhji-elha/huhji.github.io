@@ -43,7 +43,7 @@ $f(x)$ 내의 두 점 $x1, x2$를 직선($a$)으로 이었을 때, 두 점 사�
   
 👉 이진분류 문제 $Y = \{1, -1\}$에 대해 $L(f(x_i, \theta), y_i)$를 아래와 같이 만들 수 있다.
 
-1. $L_{0-1}(f, y) = 1_{fy \le 0}$
+#### 1. $L_{0-1}(f, y) = 1_{fy \le 0}$
 
      $1_p$에서 $p$가 $True$이면 ($\le 0$ 이면) 1이고 아니면 0이 된다.
     non-convex, non-smooth한 특성 때문에 Gradient Descent는 적용 못함.
@@ -73,11 +73,7 @@ Loss function은 기본적으로 convexity의 특성을 갖지만, feature들의
 
 ### MSE (Mean Squared Error)
 
-$$
-
-MSE={1\over{n}}\sum_{i=1}^{n}(\hat{y_i}-y_i)^2
-
-$$
+$MSE={1\over{n}}\sum_{i=1}^{n}(\hat{y_i}-y_i)^2$
 
 MSE는 곡선에서 어떤 두 점을 선택해 선을 그어도 곡선을 가로지르지 않는 Convex Function이다. 따라서 Local minimum이 없고, 하나의 Global minimum만 존재한다.
 또한 연속 함수이고 기울기가 급격하게 변하지 않기 때문에 경사하강법을 통해 Global minimum에 가깝게 접근할 수 있다는 것을 보장한다.
