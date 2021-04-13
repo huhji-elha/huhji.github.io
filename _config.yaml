@@ -22,6 +22,11 @@ plainwhite:
   html_lang: "KR" # set the lang attribute of the <html> tag for the pages. See here for a list of codes: https://www.w3schools.com/tags/ref_country_codes.asp
   disqus_shortname: elha-tech-blog
   markdown: kramdown
+  # add latex markdown
+  highlighter: rouge
+  lsi: false
+  excerpt_separator: "\n\n"
+  incremental: false
   kramdown:
     input: GFM
     syntax_highlighter: rouge
@@ -34,11 +39,6 @@ plainwhite:
     - page
     - post
   
-  # add latex markdown
-  highlighter: rouge
-  lsi: false
-  excerpt_separator: "\n\n"
-  incremental: false
   
   # generate social link with icon
   social_links:
