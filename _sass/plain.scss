@@ -52,7 +52,7 @@ main {
 
   @media screen and (min-width: $bigScreenW) {
     margin: 0 auto;
-    max-width: 500px;
+    max-width: 1200px;
   }
   @media screen and (max-width: 1280px) {
     margin: 0 75px;
@@ -74,7 +74,7 @@ main {
       font-family: Raleway, "NanumBarunGothic", serif;
       max-width: calc(100% - #{$leftWidth});
       margin-left: $leftWidth;
-      width: 100%;
+      width: 70%;
     }
   }
   .about {
