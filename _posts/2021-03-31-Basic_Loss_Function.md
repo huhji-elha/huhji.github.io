@@ -43,35 +43,37 @@ $f(x)$ 내의 두 점 $x1, x2$를 직선($a$)으로 이었을 때, 두 점 사�
   
 ### 👉 이진분류 문제 $Y = \{1, -1\}$에 대해 $L(f(x_i, \theta), y_i)$를 아래와 같이 만들 수 있다.
 
- 1. 0-1
+##### 1. 0-1
+
 <center>$L_{0-1}(f, y) = 1_{fy \le 0}$</center>
 
   * $1_p$에서 $p$가 $True$이면 ($\le 0$ 이면) 1이고 아니면 0이 된다.
   * non-convex, non-smooth한 특성 때문에 Gradient Descent는 적용 못함.
 
- 2. Hinge
+#### 2. Hinge
 <center>$L_{hinge}(f, y) = max\{0, 1-fy\}$</center>
 
   * SVM의 loss function으로 사용된다. $fy$가 1 이상이면 오차를 무시하고, 1 미만이면 오차가 크도록 유도한다.
 
- 3. Logistic
+#### 3. Logistic
 <center>$L_{logistic}(f, y) = \log_{2}(1 + exp(-fy))$</center>
  
- 4. Cross Entropy
+#### 4. Cross Entropy
 <center>$L_{cross\ entropy}(f, y) = -\log_{2}({1+fy \over 2})$</center>
 
   * 분류문제에서 좋은 성능을 낸다. 자세한 내용은 아래에!
 
- 5. Square
+#### 5. Square
 <center>$L_{square}(f, y) = (f-y)^2$</center>
 
   * convexity의 성질을 갖기 때문에 경사하강법을 통해 최적화가 가능하다.
 
- 6. Absolute
+#### 6. Absolute
 <center>$L_{absolute}(f, y) = \left\vert{f-y}\right\vert$</center>
 
   * 절대값 손실함수는 학습 데이터의 이상치, 특이점에 대해 제곱 손실함수보다 robust하다는 특징을 갖는다. 하지만 y=x에서 미분 불가능하다.
- 7. Huber
+ 
+#### 7. Huber
 <center>$ L_{Huber}(f, y)=\begin{cases}(f-y)^2, &\left\vert{f-y}\right\vert \le \sigma \\ 2\sigma\left\vert{f-y}\right\vert - \sigma^2, & \left\vert{f-y}\right\vert > \sigma \end{cases}$</center>
 
   * Huber 손실함수는 오차가 임곗값($\sigma$, 전형적으로 1)보다 작을 때는 2차함수이고, 오차가 $\sigma$보다 클 때는 선형함수이다. 선형 함수는 square    loss보다 이상치에 덜 민감하고, 이차 함수는 absolute loss보다 수렴 속도가 빠르고 정확도가 높다.
