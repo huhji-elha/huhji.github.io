@@ -31,7 +31,7 @@ $f(x)$ 내의 두 점 $x1, x2$를 직선($a$)으로 이었을 때, 두 점 사�
 지도학습에서 손실함수는 모델의 평가지표를 정의한다. 손실함수 없이는 모델의 파라미터를 구할 수 없다.  손실함수에 따라 최적화의 난이도가 다르고 최종적으로 얻는 모델 파라미터도 달라진다. 
 따라서 구체적인 문제에 따라 적절한 손실함수를 선택해야한다.
 
-👉 Loss Function을 다음과 같이 나타낼 수 있다.
+### 👉 Loss Function을 다음과 같이 나타낼 수 있다.
 
 - 훈련 샘플의 형식 : $(x_i, y_i)$
     - $x_i \in X$ 는 $i$번째 샘플의 feature를 나타낸다.
@@ -41,29 +41,28 @@ $f(x)$ 내의 두 점 $x1, x2$를 직선($a$)으로 이었을 때, 두 점 사�
     - $L(f(x_i, \theta), y_i)$
 
   
-👉 이진분류 문제 $Y = \{1, -1\}$에 대해 $L(f(x_i, \theta), y_i)$를 아래와 같이 만들 수 있다.
+### 👉 이진분류 문제 $Y = \{1, -1\}$에 대해 $L(f(x_i, \theta), y_i)$를 아래와 같이 만들 수 있다.
 
 #### 1. $L_{0-1}(f, y) = 1_{fy \le 0}$
 
-$1_p$에서 $p$가 $True$이면 ($\le 0$ 이면) 1이고 아니면 0이 된다.
-non-convex, non-smooth한 특성 때문에 Gradient Descent는 적용 못함.
+    * $1_p$에서 $p$가 $True$이면 ($\le 0$ 이면) 1이고 아니면 0이 된다.
+    * non-convex, non-smooth한 특성 때문에 Gradient Descent는 적용 못함.
 
 #### 2. $L_{hinge}(f, y) = max\{0, 1-fy\}$
 
-SVM의 loss function으로 사용된다. $fy$가 1 이상이면 오차를 무시하고, 1 미만이면 오차가 크도록 유도한다.
+    * SVM의 loss function으로 사용된다. $fy$가 1 이상이면 오차를 무시하고, 1 미만이면 오차가 크도록 유도한다.
 
 #### 3. $L_{logistic}(f, y) = \log_{2}(1 + exp(-fy))$
-4. $L_{cross\ entropy}(f, y) = -\log_{2}({1+fy \over 2})$
-    분류문제에서 좋은 성능을 낸다. 자세한 내용은 아래에!
-5. $L_{square}(f, y) = (f-y)^2$
-    convexity의 성질을 갖기 때문에 경사하강법을 통해 최적화가 가능하다.
-6. $L_{absolute}(f, y) = \left\vert{f-y}\right\vert$
+#### 4. $L_{cross\ entropy}(f, y) = -\log_{2}({1+fy \over 2})$
+    * 분류문제에서 좋은 성능을 낸다. 자세한 내용은 아래에!
+#### 5. $L_{square}(f, y) = (f-y)^2$
+    * convexity의 성질을 갖기 때문에 경사하강법을 통해 최적화가 가능하다.
+#### 6. $L_{absolute}(f, y) = \left\vert{f-y}\right\vert$
+    * 절대값 손실함수는 학습 데이터의 이상치, 특이점에 대해 제곱 손실함수보다 robust하다는 특징을 갖는다. 하지만 y=x에서 미분 불가능하다.
 
-    절대값 손실함수는 학습 데이터의 이상치, 특이점에 대해 제곱 손실함수보다 robust하다는 특징을 갖는다. 하지만 y=x에서 미분 불가능하다.
+#### 7. $L_{Huber}(f, y) = \begin{cases}(f-y)^2, &\left\vert{f-y}\right\vert \le \sigma \\ 2\sigma\left\vert{f-y}\right\vert - \sigma^2, & \left\vert{f-y}\right\vert > \sigma \end{cases}$ 
 
-7. $L_{Huber}(f, y) = \begin{cases}(f-y)^2, &\left\vert{f-y}\right\vert \le \sigma \\ 2\sigma\left\vert{f-y}\right\vert - \sigma^2, & \left\vert{f-y}\right\vert > \sigma \end{cases}$ 
-
-    Huber 손실함수는 오차가 임곗값($\sigma$, 전형적으로 1)보다 작을 때는 2차함수이고, 오차가 $\sigma$보다 클 때는 선형함수이다. 선형 함수는 square loss보다 이상치에 덜 민감하고, 이차 함수는 absolute loss보다 수렴 속도가 빠르고 정확도가 높다.
+    * Huber 손실함수는 오차가 임곗값($\sigma$, 전형적으로 1)보다 작을 때는 2차함수이고, 오차가 $\sigma$보다 클 때는 선형함수이다. 선형 함수는 square loss보다 이상치에 덜 민감하고, 이차 함수는 absolute loss보다 수렴 속도가 빠르고 정확도가 높다.
 
 
 Loss function은 기본적으로 convexity의 특성을 갖지만, feature들의 스케일이 매우 다르면 Global minimum을 찾는데 더 많은 비용이 소요된다. 때문에 학습 전 데이터의 Scale을 맞추는 것이 매우 중요하다.
@@ -75,7 +74,7 @@ Loss function은 기본적으로 convexity의 특성을 갖지만, feature들의
 
 ### MSE (Mean Squared Error)
 
-$MSE={1\over{n}}\sum_{i=1}^{n}(\hat{y_i}-y_i)^2$
+<center>$MSE={1\over{n}}\sum_{i=1}^{n}(\hat{y_i}-y_i)^2$</center>
 
 MSE는 곡선에서 어떤 두 점을 선택해 선을 그어도 곡선을 가로지르지 않는 Convex Function이다. 따라서 Local minimum이 없고, 하나의 Global minimum만 존재한다.
 또한 연속 함수이고 기울기가 급격하게 변하지 않기 때문에 경사하강법을 통해 Global minimum에 가깝게 접근할 수 있다는 것을 보장한다.
