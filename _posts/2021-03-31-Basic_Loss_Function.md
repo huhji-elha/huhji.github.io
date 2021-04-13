@@ -79,22 +79,22 @@ Loss function은 기본적으로 convexity의 특성을 갖지만, feature들의
 
 ### MSE (Mean Squared Error)
 
-<br><center>$MSE={1\over{n}}\sum_{i=1}^{n}(\hat{y_i}-y_i)^2$</center><br/>
+<center>$MSE={1\over{n}}\sum_{i=1}^{n}(\hat{y_i}-y_i)^2$</center>  
 
 MSE는 곡선에서 어떤 두 점을 선택해 선을 그어도 곡선을 가로지르지 않는 Convex Function이다. 따라서 Local minimum이 없고, 하나의 Global minimum만 존재한다.
 또한 연속 함수이고 기울기가 급격하게 변하지 않기 때문에 경사하강법을 통해 Global minimum에 가깝게 접근할 수 있다는 것을 보장한다.
 
 ### MAE (Mean Absolute Error)
 
-<br><center>$$MAE={1\over{n}}\sum_{i=1}^n {|\hat{y_i}-y_i|}$$</center><br/>
+<center>$$MAE={1\over{n}}\sum_{i=1}^n {|\hat{y_i}-y_i|}$$</center>  
 
 회귀 학습에 사용하는 손실함수에 일반적으로 MSE를 사용하지만 학습 데이터에 이상치가 많다면 MAE를 사용할 수 있다.
 또는 MSE와 MAE를 조합한 Huber 손실을 사용할 수 있다. Huber 손실은 위에서도 언급했지만 특이점에 대해 robust한 특징을 가진다.
 
 ### RMSE
 
-<br><center>$$RMSE = \sqrt{{1\over{n}}\sum_{i=1}^{n}(\hat{y_i}-y_i)^2}$$</center><br/>
-
+<center>$$RMSE=\sqrt{{1\over{n}}\sum_{i=1}^{n}(\hat{y_i}-y_i)^2}$$</center>
+  
 RMSE와 MAE 모두 예측값의 벡터와 타겟값의 벡터 사이의 거리를 구하는 방법이다. RMSE의 경우 n개의 제곱근의 합으로 나타냄으로 유클리디안 거리에 해당한다. $l_2 norm$ 이라고도 하며 $\lVert \cdot \rVert_2$로 표시한다.
 
 MAE는 절댓값의 합으로 나타냄으로 $l_1 norm$에 해당하며 $\lVert \cdot \rVert_1$로 표기한다. 맨해튼 거리에 해당한다.
@@ -126,14 +126,17 @@ $norm$의 지수가 클 수록 큰 값의 원소에 치우치며 작은 값은 �
 - 즉, 크로스 엔트로피는 정답 데이터의 분포 $P(x)$와 모델이 추정한 데이터 분포 $Q(x)$간의 차이를 최소화한다.
 
 <center>$$H(p, q) = -\sum_xP(x)\log{Q(x)}$$</center>
+  
 
 ### Binary Cross Entropy
 
 <center>$$L = \sum_{i=1}^n(-y_i\log(\hat{y_i}) - (1-y_i)\log(1-\hat{y_i}))$$</center>
+  
 
 ### Categorical Cross Entropy
 
 <center>$$ L = -\frac{1}{N}\sum_{j=1}^{N}\sum_{i=1}^{C}t_{ij}log(y_{ij})$$</center>
+  
 
 그렇다면 왜 분류모델에서 Square Loss와 같은 Loss Function을 쓰지 않고 Cross Entropy를 쓰는 것일까? Binary Cross Entropy와 MSE를 아래와 같이 비교해보자.
 
@@ -141,10 +144,12 @@ ground truth를 $y = \{0, 1\}$, prediction을 $\hat{y}$인 분류문제를 적�
 
 <center>$$Mean \ Squared \ Error \ Loss \\
 L = {1\over m}\sum(y_i-\hat y_i)^2 \\ L = (y - \hat y)^2$$</center>
+  
 
 <center>$$Binary \ Cross-entropy \ Loss \\
 L = -{1 \over m}\sum[y_iln(\hat y_i) + (1-y_i)ln(1-\hat y_i)] \\
 L = yln(\hat y) + (1-y)ln(1- \hat y)$$</center>
+  
 
 위 식을 각각 $y = 0$일 때와 $y = 1$일 때의 그래프를 그려보면 다음과 같다.
 
@@ -163,6 +168,7 @@ L_{SE} = 0.81 ,  \ L_{CE} = 2.3 \\ {} \\
 {\partial{L_{SE}} \over \partial{\hat y}} = 1.8, \\
 {\partial{L_{CE}} \over \partial{\hat y}} = 10.0
 $$</center>
+  
 
 정답 라벨($y$)이 $0$일 때 예측값($\hat y$)이  $0.9$가 나왔다는 것은 모델이 정답과 전혀 다른 예측을 하고 있다는 것인데,
 이런 경우 $mse$보다 $cross \ entropy$에서 $\hat y$ 업데이트를 큰 폭으로 해주므로 학습율이 더 좋아진다.
@@ -170,6 +176,7 @@ $$</center>
 <center>$${\partial{L_{SE}} \over \partial{w}} = {\partial{L_{SE}} \over \partial{\hat y}}*{\partial{\hat y} \over \partial{\hat w}} , \\ = 1.8*{\partial{\hat y} \over \partial{\hat w}}\\ {} \\ 
 {\partial{L_{CE}} \over \partial{w}} = {\partial{L_{CE}} \over \partial{\hat y}}*{\partial{\hat y} \over \partial{\hat w}} \\ 
 = 10.0*{\partial{\hat y} \over \partial{\hat w}}$$</center>
+  
 
 즉, Loss Function에 대해 정리하면 다음과 같다.
 
