@@ -45,12 +45,14 @@ $f(x)$ 내의 두 점 $x1, x2$를 직선($a$)으로 이었을 때, 두 점 사�
 
 #### 1. $L_{0-1}(f, y) = 1_{fy \le 0}$
 
-     $1_p$에서 $p$가 $True$이면 ($\le 0$ 이면) 1이고 아니면 0이 된다.
-    non-convex, non-smooth한 특성 때문에 Gradient Descent는 적용 못함.
+$1_p$에서 $p$가 $True$이면 ($\le 0$ 이면) 1이고 아니면 0이 된다.
+non-convex, non-smooth한 특성 때문에 Gradient Descent는 적용 못함.
 
-2. $L_{hinge}(f, y) = max\{0, 1-fy\}$
-    SVM의 loss function으로 사용된다. $fy$가 1 이상이면 오차를 무시하고, 1 미만이면 오차가 크도록 유도한다.
-3. $L_{logistic}(f, y) = \log_{2}(1 + exp(-fy))$
+#### 2. $L_{hinge}(f, y) = max\{0, 1-fy\}$
+
+SVM의 loss function으로 사용된다. $fy$가 1 이상이면 오차를 무시하고, 1 미만이면 오차가 크도록 유도한다.
+
+#### 3. $L_{logistic}(f, y) = \log_{2}(1 + exp(-fy))$
 4. $L_{cross\ entropy}(f, y) = -\log_{2}({1+fy \over 2})$
     분류문제에서 좋은 성능을 낸다. 자세한 내용은 아래에!
 5. $L_{square}(f, y) = (f-y)^2$
