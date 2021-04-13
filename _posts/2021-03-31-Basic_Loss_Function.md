@@ -79,21 +79,21 @@ Loss function은 기본적으로 convexity의 특성을 갖지만, feature들의
 
 ### MSE (Mean Squared Error)
 
-<center>$MSE={1\over{n}}\sum_{i=1}^{n}(\hat{y_i}-y_i)^2$</center><br/>
+<br><center>$MSE={1\over{n}}\sum_{i=1}^{n}(\hat{y_i}-y_i)^2$</center><br/>
 
 MSE는 곡선에서 어떤 두 점을 선택해 선을 그어도 곡선을 가로지르지 않는 Convex Function이다. 따라서 Local minimum이 없고, 하나의 Global minimum만 존재한다.
 또한 연속 함수이고 기울기가 급격하게 변하지 않기 때문에 경사하강법을 통해 Global minimum에 가깝게 접근할 수 있다는 것을 보장한다.
 
 ### MAE (Mean Absolute Error)
 
-<center>$$MAE={1\over{n}}\sum_{i=1}^n {|\hat{y_i}-y_i|}$$</center><br/>
+<br><center>$$MAE={1\over{n}}\sum_{i=1}^n {|\hat{y_i}-y_i|}$$</center><br/>
 
 회귀 학습에 사용하는 손실함수에 일반적으로 MSE를 사용하지만 학습 데이터에 이상치가 많다면 MAE를 사용할 수 있다.
 또는 MSE와 MAE를 조합한 Huber 손실을 사용할 수 있다. Huber 손실은 위에서도 언급했지만 특이점에 대해 robust한 특징을 가진다.
 
 ### RMSE
 
-<center>$$RMSE = \sqrt{{1\over{n}}\sum_{i=1}^{n}(\hat{y_i}-y_i)^2}$$</center><br/>
+<br><center>$$RMSE = \sqrt{{1\over{n}}\sum_{i=1}^{n}(\hat{y_i}-y_i)^2}$$</center><br/>
 
 RMSE와 MAE 모두 예측값의 벡터와 타겟값의 벡터 사이의 거리를 구하는 방법이다. RMSE의 경우 n개의 제곱근의 합으로 나타냄으로 유클리디안 거리에 해당한다. $l_2 norm$ 이라고도 하며 $\lVert \cdot \rVert_2$로 표시한다.
 
