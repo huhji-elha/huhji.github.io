@@ -6,7 +6,7 @@ $linkColor: #926AA6;
 $mobileW: 768px;
 $smallMobileW: 480px;
 $bigScreenW: 1600px;
-$leftWidth: 220px;
+$leftWidth: 500px;
 
 *,
 *:before,
@@ -46,7 +46,7 @@ h2 {
   }
 }
 main {
-  margin: 0 100px;
+  margin: 0 90px;
   display: flex;
   height: 100%;
 
