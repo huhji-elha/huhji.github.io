@@ -66,8 +66,7 @@ $f(x)$ 내의 두 점 $x1, x2$를 직선($a$)으로 이었을 때, 두 점 사�
     * 절대값 손실함수는 학습 데이터의 이상치, 특이점에 대해 제곱 손실함수보다 robust하다는 특징을 갖는다. 하지만 y=x에서 미분 불가능하다.
  7. 
 
- $$ L_{Huber}(f, y) = \begin{cases}(f-y)^2, &\left\vert{f-y}\right\vert \le \sigma \\ 
- 2\sigma\left\vert{f-y}\right\vert - \sigma^2, & \left\vert{f-y}\right\vert > \sigma \end{cases} $$ 
+ $L_{Huber}(f, y) = \begin{cases}(f-y)^2, &\left\vert{f-y}\right\vert \le \sigma \\ 2\sigma\left\vert{f-y}\right\vert - \sigma^2, & \left\vert{f-y}\right\vert > \sigma \end{cases}$
 
   * Huber 손실함수는 오차가 임곗값($\sigma$, 전형적으로 1)보다 작을 때는 2차함수이고, 오차가 $\sigma$보다 클 때는 선형함수이다. 선형 함수는 square    loss보다 이상치에 덜 민감하고, 이차 함수는 absolute loss보다 수렴 속도가 빠르고 정확도가 높다.
 
@@ -95,7 +94,7 @@ MSE는 곡선에서 어떤 두 점을 선택해 선을 그어도 곡선을 가�
 
 ### RMSE
 
-$\sqrt{1}$
+$\sqrt{{1\over{n}}}$
 $$ RMSE=\sqrt{{1\over{n}}{\sum_{i=1}^{n}(\hat{y_i}-y_i)^2}} $$
 
   
