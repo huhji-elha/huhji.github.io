@@ -92,7 +92,8 @@ main {
       position: fixed;
       max-width: 280px;
     }
-    min-width: $leftWidth;
+    // min-width: $leftWidth;
+    min-width: 100px;
     justify-content: center;
     flex-direction: column;
     align-items: center;
