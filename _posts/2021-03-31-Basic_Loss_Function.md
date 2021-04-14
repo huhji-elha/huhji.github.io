@@ -184,7 +184,7 @@ $$</center>
   
 
 정답 라벨($y$)이 $0$일 때 예측값($\hat y$)이  $0.9$가 나왔다는 것은 모델이 정답과 전혀 다른 예측을 하고 있다는 것인데,
-이런 경우 $mse$보다 $cross \ entropy$에서 $\hat y$ 업데이트를 큰 폭으로 해주므로 학습율이 더 좋아지게된다.
+이런 경우 $mse$보다 $cross \ entropy$에서 $\hat y$ 업데이트를 큰 폭으로 해주므로 <span style="color:DarkOrchid">**학습율이 더 좋아지게된다.**</span>
 
 <center>$${\partial{L_{SE}} \over \partial{w}} = {\partial{L_{SE}} \over \partial{\hat y}}*{\partial{\hat y} \over \partial{\hat w}} , \\ = 1.8*{\partial{\hat y} \over \partial{\hat w}}\\ {} \\ 
 {\partial{L_{CE}} \over \partial{w}} = {\partial{L_{CE}} \over \partial{\hat y}}*{\partial{\hat y} \over \partial{\hat w}} \\ 
