@@ -113,7 +113,8 @@ plt.title("Hyperbolic Tangent Activation Function")
 plt.show()
 ```
 
-</br>
+/
+
 
 ## 3. ReLU
 
@@ -154,7 +155,7 @@ plt.title("ReLU Activation Function")
 plt.show()
 ```
 
-</br>
+/
 
 ## 4. Leaky ReLU
 
@@ -196,7 +197,7 @@ plt.legend(fontsize=14)
 plt.title("Leaky ReLU Activation Function")
 plt.show()
 ```
-</br>
+/
 
 ## 5. ELU
 
@@ -235,7 +236,7 @@ plt.legend(fontsize=14)
 plt.title("ELU Activation Function")
 plt.show()
 ```
-</br>
+/
 
 [Gunter Klambauer et al., 2017](https://arxiv.org/pdf/1706.02515.pdf) 에서는 이러한 ELU의 스케일을 조정하여 더 나은 성능을 내는 SELU(Scaled ELU) 활성 함수를 소개한다. 
 
@@ -280,7 +281,7 @@ plt.legend(fontsize=14)
 plt.title("SELU Activation Function")
 plt.show()
 ```
-</br>
+/
 
 지금까지의 ReLU 계열 함수를 한번에 비교해보면 다음과 같다.
 
