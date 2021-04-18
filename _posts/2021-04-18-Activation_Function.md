@@ -28,13 +28,7 @@ Activation Function은 종류가 많고, 해결하고자 하는 Task에 따라 �
 - ReLU — $max(0, x)$
 - Leaky ReLU — $max(ax, x)$
 - Maxout — $max(w_1^T + b_1, w_2^Tx + b_2)$
-- ELU —<span style="display:inline;text-align:left">$\begin{cases} x  x \ge 0 \\ \alpha(e^x-1) & x < 0 \end{cases}$</span>
 
-$f(n) =
-\begin{cases}
-n/2,  & \text{if $n$ is even} \\
-3n+1, & \text{if $n$ is odd}
-\end{cases}$
 
 신경망을 훈련할 때, 한 Epoch이 끝나고 Loss Function을 기준으로 모든 파라미터가 업데이트된다. 
 그렇기 때문에 신경망 학습은 Loss 자체의 최적화를 푸는 문제로도 볼 수 있다. 
@@ -42,7 +36,7 @@ n/2,  & \text{if $n$ is even} \\
 Activation Function을 사용해 NonLinear한 데이터 분포가 학습되면 Loss Function의 convex한 특성이 깨질 수 있다. 
 따라서 어떤 Activation function을 사용하느냐가 수렴성이나 학습 속도에 영향을 미치게 된다. 
 
-### 1. Sigmoid
+## 1. Sigmoid
 
 <span style="display:block;text-align:center">$\sigma{x} = {1 \over 1+e^{-x}}$</span>
 
@@ -82,7 +76,7 @@ plt.title("Sigmoid Activation function")
 plt.show()
 ```
 
-### 2. Hyperbolic tangent
+## 2. Hyperbolic tangent
 
 <span style="display:block;text-align:center">$tanh(x) = {sinh(x) \over cosh(x)} = {e^{2x}-1 \over e^{2x}+1}$</span>
 
@@ -119,13 +113,15 @@ plt.title("Hyperbolic Tangent Activation Function")
 plt.show()
 ```
 
-### 3. ReLU
+</br>
 
-<span style="display:block;text-align:center">$$ReLU(x) = \begin{cases}x & x>0 \\ 0 & x\le 0 \end{cases}$$</span>
+## 3. ReLU
+
+<center>$$ReLU(x) = \begin{cases}x & x>0 \\ 0 & x\le 0 \end{cases}$$</center>
 
 <span style="display:block;text-align:center">미분하면 다음과 같다.</span>
 
-<span style="display:block;text-align:center">$$f'(x) = \begin{cases}1 & x>0 \\ 0 & x \le 0 \end{cases}$$</span>
+<center>$$f'(x) = \begin{cases}1 & x>0 \\ 0 & x \le 0 \end{cases}$$</center>
 
 ReLU함수는 0을 기준으로 양쪽이 선형함수이기 때문에 Sigmoid보다 수렴 속도가 빠르다는 장점이 있다. 양쪽 그래프를 미분하면 0 또는 1이기 때문에 0보다 큰 값을 다음 Layer로 그대로 내보내는 형태가 된다. 
 
@@ -158,7 +154,9 @@ plt.title("ReLU Activation Function")
 plt.show()
 ```
 
-### 4. Leaky ReLU
+</br>
+
+## 4. Leaky ReLU
 
 <center>$LeakyReLU(x) = \begin{cases}x & x\ge0 \\ scale*x & x< 0 \end{cases}$</center>
 
@@ -198,10 +196,11 @@ plt.legend(fontsize=14)
 plt.title("Leaky ReLU Activation Function")
 plt.show()
 ```
+</br>
 
-### 5. ELU
+## 5. ELU
 
-<span style="display:block;text-align:center">$$ELU_a(x) = \begin{cases}x & x \ge 0 \\ \alpha(e^x-1) & x < 0 \end{cases}$$</span>
+<center>$$ELU_a(x) = \begin{cases}x & x \ge 0 \\ \alpha(e^x-1) & x < 0 \end{cases}$$</center>
 
 [Djork-Ame Clevert et al, 2016](https://arxiv.org/pdf/1511.07289.pdf) 에 의해 제안된 ELU는 다른 모든 ReLU 계열 활성 함수보다 높은 성능을 기록했다. 훈련 시간이 줄었을 뿐 아니라 Test 데이터에서의 성능도 더 높았다. 
 
@@ -236,10 +235,11 @@ plt.legend(fontsize=14)
 plt.title("ELU Activation Function")
 plt.show()
 ```
+</br>
 
 [Gunter Klambauer et al., 2017](https://arxiv.org/pdf/1706.02515.pdf) 에서는 이러한 ELU의 스케일을 조정하여 더 나은 성능을 내는 SELU(Scaled ELU) 활성 함수를 소개한다. 
 
-<span style="display:block;text-align:center">$$SELU(x) = \lambda \begin{cases} x & x > 0 \\ \alpha({e^x} - 1) & x \le 0 \end{cases}$$</span>
+<center>$$SELU(x) = \lambda \begin{cases} x & x > 0 \\ \alpha({e^x} - 1) & x \le 0 \end{cases}$$</center>
 
 SELU는 Fully Connected Layer에 사용될때 네트워크가 Self-normalized 된다는 특징을 갖는다. 
 
@@ -280,6 +280,7 @@ plt.legend(fontsize=14)
 plt.title("SELU Activation Function")
 plt.show()
 ```
+</br>
 
 지금까지의 ReLU 계열 함수를 한번에 비교해보면 다음과 같다.
 
@@ -294,14 +295,10 @@ plt.show()
 일반적으로 좋은 성능을 기록하는 활성함수는
 SELU > ELU > Leaky RELU 계열 함수들 > ReLU > tanh > sigmoid 순이다.
 
-✅ 하지만 네트워크가 Self-normalize를 보장하지 않는 구조라면 ELU를 사용하는 것이 좋다.
-
-✅ 추론 속도가 중요한 네트워크를 설계한다면 LeakyReLU를 고려한다.
-
-✅ 데이터셋이 소규모이고, 신경망이 과적합 되었다면 RReLU로 학습을 규제할 수 있다.
-
-✅ 데이터셋이 대규모라면 PReLU를 포함하는 것이 좋다.
-
+✅ 하지만 네트워크가 Self-normalize를 보장하지 않는 구조라면 ELU를 사용하는 것이 좋다. \
+✅ 추론 속도가 중요한 네트워크를 설계한다면 LeakyReLU를 고려한다.\
+✅ 데이터셋이 소규모이고, 신경망이 과적합 되었다면 RReLU로 학습을 규제할 수 있다.\
+✅ 데이터셋이 대규모라면 PReLU를 포함하는 것이 좋다.\
 ✅ ReLU 활성 함수는 가장 널리 사용되므로 많은 라이브러리와 하드웨어 가속기는 ReLU에 최적화되어 있다. 학습 속도가 중요하다면 ReLU를 권장한다.
 
   
