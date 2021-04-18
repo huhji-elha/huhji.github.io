@@ -36,6 +36,8 @@ Activation Function은 종류가 많고, 해결하고자 하는 Task에 따라 �
 Activation Function을 사용해 NonLinear한 데이터 분포가 학습되면 Loss Function의 convex한 특성이 깨질 수 있다. 
 따라서 어떤 Activation function을 사용하느냐가 수렴성이나 학습 속도에 영향을 미치게 된다. 
 
+     
+     
 ## 1. Sigmoid
 
 <span style="display:block;text-align:center">$\sigma{x} = {1 \over 1+e^{-x}}$</span>
@@ -113,7 +115,7 @@ plt.title("Hyperbolic Tangent Activation Function")
 plt.show()
 ```
 
-/
+       
 
 
 ## 3. ReLU
@@ -155,7 +157,9 @@ plt.title("ReLU Activation Function")
 plt.show()
 ```
 
-/
+      
+           
+               
 
 ## 4. Leaky ReLU
 
@@ -197,7 +201,9 @@ plt.legend(fontsize=14)
 plt.title("Leaky ReLU Activation Function")
 plt.show()
 ```
-/
+    
+      
+
 
 ## 5. ELU
 
@@ -236,7 +242,9 @@ plt.legend(fontsize=14)
 plt.title("ELU Activation Function")
 plt.show()
 ```
-/
+   
+     
+
 
 [Gunter Klambauer et al., 2017](https://arxiv.org/pdf/1706.02515.pdf) 에서는 이러한 ELU의 스케일을 조정하여 더 나은 성능을 내는 SELU(Scaled ELU) 활성 함수를 소개한다. 
 
@@ -281,7 +289,9 @@ plt.legend(fontsize=14)
 plt.title("SELU Activation Function")
 plt.show()
 ```
-/
+       
+
+
 
 지금까지의 ReLU 계열 함수를 한번에 비교해보면 다음과 같다.
 
