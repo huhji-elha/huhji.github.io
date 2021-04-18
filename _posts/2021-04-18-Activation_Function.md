@@ -28,7 +28,7 @@ Activation Function은 종류가 많고, 해결하고자 하는 Task에 따라 �
 - ReLU — $max(0, x)$
 - Leaky ReLU — $max(ax, x)$
 - Maxout — $max(w_1^T + b_1, w_2^Tx + b_2)$
-- <span style="display:block;text-align:left">ELU — $\begin{cases} x & x \ge 0 \\ \alpha(e^x-1) & x < 0 \end{cases}$</span>
+- ELU —<span style="display:inline;text-align:left">$$\begin{cases} x & x \ge 0 \\ \alpha(e^x-1) & x < 0 \end{cases}$$</span>
 
 신경망을 훈련할 때, 한 Epoch이 끝나고 Loss Function을 기준으로 모든 파라미터가 업데이트된다. 
 그렇기 때문에 신경망 학습은 Loss 자체의 최적화를 푸는 문제로도 볼 수 있다. 
@@ -115,11 +115,11 @@ plt.show()
 
 ### 3. ReLU
 
-<span style="display:block;text-align:center">$ReLU(x) = \begin{cases}x & x>0 \\ 0 & x\le 0 \end{cases}$$</span>
+<span style="display:block;text-align:center">$$ReLU(x) = \begin{cases}x & x>0 \\ 0 & x\le 0 \end{cases}$$</span>
 
 <span style="display:block;text-align:center">미분하면 다음과 같다.</span>
 
-<span style="display:block;text-align:center">$f'(x) = \begin{cases}1 & x>0 \\ 0 & x \le 0 \end{cases}$</span>
+<span style="display:block;text-align:center">$$f'(x) = \begin{cases}1 & x>0 \\ 0 & x \le 0 \end{cases}$$</span>
 
 ReLU함수는 0을 기준으로 양쪽이 선형함수이기 때문에 Sigmoid보다 수렴 속도가 빠르다는 장점이 있다. 양쪽 그래프를 미분하면 0 또는 1이기 때문에 0보다 큰 값을 다음 Layer로 그대로 내보내는 형태가 된다. 
 
@@ -195,7 +195,7 @@ plt.show()
 
 ### 5. ELU
 
-<span style="display:block;text-align:center">$ELU_a(x) = \begin{cases}x & x \ge 0 \\ \alpha(e^x-1) & x < 0 \end{cases}$</span>
+<span style="display:block;text-align:center">$$ELU_a(x) = \begin{cases}x & x \ge 0 \\ \alpha(e^x-1) & x < 0 \end{cases}$$</span>
 
 [Djork-Ame Clevert et al, 2016](https://arxiv.org/pdf/1511.07289.pdf) 에 의해 제안된 ELU는 다른 모든 ReLU 계열 활성 함수보다 높은 성능을 기록했다. 훈련 시간이 줄었을 뿐 아니라 Test 데이터에서의 성능도 더 높았다. 
 
@@ -233,7 +233,7 @@ plt.show()
 
 [Gunter Klambauer et al., 2017](https://arxiv.org/pdf/1706.02515.pdf) 에서는 이러한 ELU의 스케일을 조정하여 더 나은 성능을 내는 SELU(Scaled ELU) 활성 함수를 소개한다. 
 
-<span style="display:block;text-align:center">$SELU(x) = \lambda \begin{cases} x & x > 0 \\ \alpha({e^x} - 1) & x \le 0 \end{cases}$</span>
+<span style="display:block;text-align:center">$$SELU(x) = \lambda \begin{cases} x & x > 0 \\ \alpha({e^x} - 1) & x \le 0 \end{cases}$$</span>
 
 SELU는 Fully Connected Layer에 사용될때 네트워크가 Self-normalized 된다는 특징을 갖는다. 
 
