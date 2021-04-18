@@ -28,7 +28,7 @@ Activation Function은 종류가 많고, 해결하고자 하는 Task에 따라 �
 - ReLU — $max(0, x)$
 - Leaky ReLU — $max(ax, x)$
 - Maxout — $max(w_1^T + b_1, w_2^Tx + b_2)$
-- ELU —<span style="display:inline;text-align:left">$$\begin{cases} x & x \ge 0 \\ \alpha(e^x-1) & x < 0 \end{cases}$$</span>
+- ELU —<span style="display:inline;text-align:left">$\begin{equation*}\begin{cases} x & x \ge 0 \\ \alpha(e^x-1) & x < 0 \end{cases}\end{equation*}$</span>
 
 신경망을 훈련할 때, 한 Epoch이 끝나고 Loss Function을 기준으로 모든 파라미터가 업데이트된다. 
 그렇기 때문에 신경망 학습은 Loss 자체의 최적화를 푸는 문제로도 볼 수 있다. 
