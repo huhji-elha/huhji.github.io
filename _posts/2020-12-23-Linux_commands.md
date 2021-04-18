@@ -181,7 +181,7 @@ unzip -qq filename
 vim ~/.zshrc
 ```
 
-### remove Linus package
+### remove Linux package
 
 ```bash
 #Remove python2.7
