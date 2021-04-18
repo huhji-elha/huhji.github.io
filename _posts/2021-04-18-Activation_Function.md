@@ -38,11 +38,11 @@ Activation Function을 사용해 NonLinear한 데이터 분포가 학습되면 L
 
 ### 1. Sigmoid
 
-<center>$\sigma{x} = {1 \over 1+e^{-x}}$</center>
+<span style="display:block;text-align:center">$\sigma{x} = {1 \over 1+e^{-x}}$</span>
 
-미분하면 다음과 같다.
+<span style="display:block;text-align:center">미분하면 다음과 같다.</span>
 
-<center>$f'(x) = f(x)(1-f(x))$</center>
+<span style="display:block;text-align:center">$f'(x) = f(x)(1-f(x))$</span>
 
 함수값이 0과 1 사이에 있다는 것과 미분가능하다는 것이 장점이다.
 output이 0과 1로 표현되기 때문에 주로 Classification 문제에서 마지막 레이어에 많이 사용된다.
@@ -50,9 +50,8 @@ output이 0과 1로 표현되기 때문에 주로 Classification 문제에서 �
 
 <span style="display:block;text-align:center">![sigmoid](https://user-images.githubusercontent.com/59910975/115139255-c57a3f00-a06b-11eb-94cf-a5068086ff40.png)</span>
 
-Sigmoid 함수는 back propagation을 적용하면 취약할 수 있다. 미분함수를 보면 x가 매우 크거나 매우 작을 때 모두 0에 근사하게 되는데 이는 Gradient Vanishing 현상을 일으킨다.
+Sigmoid 함수는 back propagation을 적용하면 취약할 수 있다. 미분함수를 보면 x가 매우 크거나 매우 작을 때 모두 0에 근사하게 되는데 이는 Gradient Vanishing 현상(학습 연산 중에 0 값이 많이 곱해지므로 네트워크가 죽는 문제) 을 일으킨다.
 
-이는 학습 연산 중에 0 값이 많이 곱해지므로 네트워크가 죽는 문제를 의미한다. 
 다음은 Numpy로 구현한 Sigmoid 함수이다.
 
 ```python
@@ -79,11 +78,12 @@ plt.show()
 
 ### 2. Hyperbolic tangent
 
-<center>$tanh(x) = {sinh(x) \over cosh(x)} = {e^{2x}-1 \over e^{2x}+1}$</center>
+<span style="display:block;text-align:center">$tanh(x) = {sinh(x) \over cosh(x)} = {e^{2x}-1 \over e^{2x}+1}$</span>
 
-미분하면 다음과 같다.
 
-<center>$f'(x) = 1-(f(x))^2$</center>
+<span style="display:block;text-align:center">미분하면 다음과 같다.</span>
+
+<span style="display:block;text-align:center">$f'(x) = 1-(f(x))^2$</span>
 
 Sigmoid 함수처럼 tanh 함수도 S자 모양이고 연속적이며 미분가능하다.
 사실상 Sigmoid 함수를 평행 이동한 것과 같다.
@@ -115,11 +115,11 @@ plt.show()
 
 ### 3. ReLU
 
-<center>$ReLU(x) = \begin{cases}x & x>0 \\ 0 & x\le 0 \end{cases}$$</center>
+<span style="display:block;text-align:center">$ReLU(x) = \begin{cases}x & x>0 \\ 0 & x\le 0 \end{cases}$$</span>
 
-미분하면 다음과 같다.
+<span style="display:block;text-align:center">미분하면 다음과 같다.</span>
 
-<center>$f'(x) = \begin{cases}1 & x>0 \\ 0 & x \le 0 \end{cases}$</center>
+<span style="display:block;text-align:center">$f'(x) = \begin{cases}1 & x>0 \\ 0 & x \le 0 \end{cases}$</span>
 
 ReLU함수는 0을 기준으로 양쪽이 선형함수이기 때문에 Sigmoid보다 수렴 속도가 빠르다는 장점이 있다. 양쪽 그래프를 미분하면 0 또는 1이기 때문에 0보다 큰 값을 다음 Layer로 그대로 내보내는 형태가 된다. 
 
