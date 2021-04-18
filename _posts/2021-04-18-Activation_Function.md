@@ -35,17 +35,17 @@ Activation Function을 사용해 NonLinear한 데이터 분포가 학습되면 L
 
 ### 1. Sigmoid
 
-$$\sigma{x} = {1 \over 1+e^{-x}}$$
+<center>$\sigma{x} = {1 \over 1+e^{-x}}$</center>
 
 미분하면 다음과 같다.
 
-$$f'(x) = f(x)(1-f(x))$$
+<center>$f'(x) = f(x)(1-f(x))$$</center>
 
 함수값이 0과 1 사이에 있다는 것과 미분가능하다는 것이 장점이다.
 output이 0과 1로 표현되기 때문에 주로 Classification 문제에서 마지막 레이어에 많이 사용된다.
 또한 0과 1사이로 표현되었기 때문에 확률 개념으로 사용할 수도 있다.
 
-![sigmoid](https://user-images.githubusercontent.com/59910975/115139255-c57a3f00-a06b-11eb-94cf-a5068086ff40.png)
+<span style="display:block;text-align:center">![sigmoid](https://user-images.githubusercontent.com/59910975/115139255-c57a3f00-a06b-11eb-94cf-a5068086ff40.png)</span>
 
 Sigmoid 함수는 back propagation을 적용하면 취약할 수 있다. 미분함수를 보면 x가 매우 크거나 매우 작을 때 모두 0에 근사하게 되는데 이는 Gradient Vanishing 현상을 일으킨다.
 
@@ -76,16 +76,16 @@ plt.show()
 
 ### 2. Hyperbolic tangent
 
-$$tanh(x) = {sinh(x) \over cosh(x)} = {e^{2x}-1 \over e^{2x}+1}$$
+<center>$tanh(x) = {sinh(x) \over cosh(x)} = {e^{2x}-1 \over e^{2x}+1}$</center>
 
 미분하면 다음과 같다.
 
-$$f'(x) = 1-(f(x))^2$$
+<center>$f'(x) = 1-(f(x))^2$</center>
 
 Sigmoid 함수처럼 tanh 함수도 S자 모양이고 연속적이며 미분가능하다.
 사실상 Sigmoid 함수를 평행 이동한 것과 같다.
 
-![tangent](https://user-images.githubusercontent.com/59910975/115139256-c57a3f00-a06b-11eb-8634-d0d4a6cd1d71.png)
+<span style="display:block;text-align:center">![tangent](https://user-images.githubusercontent.com/59910975/115139256-c57a3f00-a06b-11eb-8634-d0d4a6cd1d71.png)</span>
 
 출력 범위는 -1과 1 사이이다. 따라서 훈련 초기에 각 층의 출력을 원점 근처로 모으는 경향이 있어 빠르게 수렴하도록 해주는 특징이 있다. 
 
@@ -112,15 +112,15 @@ plt.show()
 
 ### 3. ReLU
 
-$$ReLU(x) = \begin{cases}x & x>0 \\ 0 & x\le 0 \end{cases}$$
+<center>$ReLU(x) = \begin{cases}x & x>0 \\ 0 & x\le 0 \end{cases}$$</center>
 
 미분하면 다음과 같다.
 
-$$f'(x) = \begin{cases}1 & x>0 \\ 0 & x \le 0 \end{cases}$$
+<center>$f'(x) = \begin{cases}1 & x>0 \\ 0 & x \le 0 \end{cases}$</center>
 
 ReLU함수는 0을 기준으로 양쪽이 선형함수이기 때문에 Sigmoid보다 수렴 속도가 빠르다는 장점이 있다. 양쪽 그래프를 미분하면 0 또는 1이기 때문에 0보다 큰 값을 다음 Layer로 그대로 내보내는 형태가 된다. 
 
-![relu](https://user-images.githubusercontent.com/59910975/115139252-c4491200-a06b-11eb-902f-311a7d597cc5.png)
+<span style="display:block;text-align:center">![relu](https://user-images.githubusercontent.com/59910975/115139252-c4491200-a06b-11eb-902f-311a7d597cc5.png)</span>
 
 ReLU 함수는 이미지 연산을 할 때 유리한데, 이미지는 0~255 사이의 RGB 값으로 이루어진 데이터이기 때문에 음수가 나왔을 때 그 값에 0을 곱해 다음 Layer로 넘어가지 못하게 막는다. 
 
@@ -151,14 +151,14 @@ plt.show()
 
 ### 4. Leaky ReLU
 
-$$LeakyReLU(x) = \begin{cases}x & x\ge0 \\ scale*x & x< 0 \end{cases}$$
+<center>$LeakyReLU(x) = \begin{cases}x & x\ge0 \\ scale*x & x< 0 \end{cases}$</center>
 
 Leaky ReLU는 Dying ReLU를 해결하기 위한 방법으로 고안되었다.
 $LeakyReLU_a(z) = max(scale*z, z)$로 정의되며 $scale$은 함수가 새는 정도(Leaky)를 결정한다. 일반적으로 0.1 혹은 0.01로 설정한다. 
 
 이 기울기값은 LeakyReLU가 죽지 않게 (0 그래디언트가 곱해지지않게) 만들어준다. 
 
-![leaky_relu](https://user-images.githubusercontent.com/59910975/115139251-c4491200-a06b-11eb-9b93-f2aa6076fee1.png)
+<span style="display:block;text-align:center">![leaky_relu](https://user-images.githubusercontent.com/59910975/115139251-c4491200-a06b-11eb-9b93-f2aa6076fee1.png)</span>
 
 [Bing Xu et al., 2015](https://arxiv.org/pdf/1505.00853.pdf) 에서 저자는 여러 ReLU 계열의 함수를 컨볼루션 연산에 대해 비교한 결과 LeakyReLU가 ReLU보다 항상 성능이 높다는 결론을 내렸다. $scale$ 값을 $0.2$로 두어 $x<0$ 일 때 더 큰 값을 통과하게 하는 것이 $scale=0.01$일 때보다 더 좋은 성능을 보였다.
 
@@ -192,7 +192,7 @@ plt.show()
 
 ### 5. ELU
 
-$$ELU_a(x) = \begin{cases}x & x \ge 0 \\ \alpha(e^x-1) & x < 0 \end{cases}$$
+<span style="display:block;text-align:center">$ELU_a(x) = \begin{cases}x & x \ge 0 \\ \alpha(e^x-1) & x < 0 \end{cases}$</span>
 
 [Djork-Ame Clevert et al, 2016](https://arxiv.org/pdf/1511.07289.pdf) 에 의해 제안된 ELU는 다른 모든 ReLU 계열 활성 함수보다 높은 성능을 기록했다. 훈련 시간이 줄었을 뿐 아니라 Test 데이터에서의 성능도 더 높았다. 
 
@@ -204,7 +204,7 @@ $$ELU_a(x) = \begin{cases}x & x \ge 0 \\ \alpha(e^x-1) & x < 0 \end{cases}$$
 
 모든 구간에서 미분 가능하면 경사하강법의 속도가 높아진다.
 
-![elu](https://user-images.githubusercontent.com/59910975/115139250-c3b07b80-a06b-11eb-8bcc-9bdd09e88fd6.png)
+<span style="display:block;text-align:center">![elu](https://user-images.githubusercontent.com/59910975/115139250-c3b07b80-a06b-11eb-8bcc-9bdd09e88fd6.png)</span>
 
 ELU 함수의 단점은 ReLU 계열 함수에 비해 연산 속도가 느리다는 것이다. 
 
@@ -230,14 +230,14 @@ plt.show()
 
 [Gunter Klambauer et al., 2017](https://arxiv.org/pdf/1706.02515.pdf) 에서는 이러한 ELU의 스케일을 조정하여 더 나은 성능을 내는 SELU(Scaled ELU) 활성 함수를 소개한다. 
 
-$$SELU(x) = \lambda \begin{cases} x & x > 0 \\ \alpha({e^x} - 1) & x \le 0 \end{cases}$$
+<span style="display:block;text-align:center">$SELU(x) = \lambda \begin{cases} x & x > 0 \\ \alpha({e^x} - 1) & x \le 0 \end{cases}$</span>
 
 SELU는 Fully Connected Layer에 사용될때 네트워크가 Self-normalized 된다는 특징을 갖는다. 
 
 Self-normalized 되면 학습하는 동안 각 Layer의 출력이 0의 평균과 표준편차 1을 유지하기 때문에 그래디언트 소실, 폭주의 위험을 방지한다.
 그 결과 SELU는 깊은 신경망에서 다른 활성 함수보다 뛰어난 성능을 기록하게된다.
 
-![selu](https://user-images.githubusercontent.com/59910975/115139254-c4e1a880-a06b-11eb-9fca-5f6e82094c67.png)
+<span style="display:block;text-align:center">![selu](https://user-images.githubusercontent.com/59910975/115139254-c4e1a880-a06b-11eb-9fca-5f6e82094c67.png)</span>
 
 그러나 네트워크가 Self-normalize 되기 위한 조건이 있다.
 
@@ -274,7 +274,7 @@ plt.show()
 
 지금까지의 ReLU 계열 함수를 한번에 비교해보면 다음과 같다.
 
-![all_relus](https://user-images.githubusercontent.com/59910975/115139249-c27f4e80-a06b-11eb-9862-5f8d1ed4ae28.png)
+<span style="display:block;text-align:center">![all_relus](https://user-images.githubusercontent.com/59910975/115139249-c27f4e80-a06b-11eb-9862-5f8d1ed4ae28.png)</span>
 
   
     
