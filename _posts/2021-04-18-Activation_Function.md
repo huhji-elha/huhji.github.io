@@ -1,3 +1,17 @@
+---
+layout: post
+title:  "Introduce Activation Functions on Machine Learning"
+date:   2021-04-18 17:42:23 +0530
+categories: Sigmoid ReLU Leaky-ReLU ELU SELU
+use_math: true
+---
+🔌 딥한 러닝을 가능하게 하는 활성화 함수에 대하여
+
+_____________________________________
+
+
+
+
 # Activation function
 
 ## Why need Activation function?
@@ -284,7 +298,7 @@ SELU > ELU > Leaky RELU 계열 함수들 > ReLU > tanh > sigmoid 순이다.
   
     
       
-      
+
 Reference:
 
 - [MathWorks](https://www.mathworks.com/help/deeplearning)
