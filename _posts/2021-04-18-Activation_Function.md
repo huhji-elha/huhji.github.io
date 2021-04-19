@@ -16,7 +16,10 @@ _____________________________________
 
 ## Why need Activation function?
 
-Loss Function에서 설명했듯이 기본적인 인공신경망은 선형 결합 형태로 되어있다. (ex. $f(g(h(x)))$). node 값들에 가중치를 곱하고 더하는 형태이기 때문에 이전 Layer와 다음 Layer의 관계 또한 선형 결합이다. Layer 사이에 비선형성(nonlinear)을 추가해주지 않으면 아무리 Layer를 깊게 쌓아도 하나의 Layer와 동일해진다. 
+Loss Function에서 설명했듯이 기본적인 인공신경망은 선형 결합 형태로 되어있다. (ex. $f(g(h(x)))$). 
+node 값들에 가중치를 곱하고 더하는 형태이기 때문에 이전 Layer와 다음 Layer의 관계 또한 선형 결합이다. \
+Layer 사이에 비선형성(nonlinear)을 추가해주지 않으면 아무리 Layer를 깊게 쌓아도 하나의 Layer와 동일해진다. 
+
 따라서 복잡한 문제를 풀기 위해 Activation function을 사용하여 비선형성을 추가한다.
 
 이론적으로 비선형 활성화 함수가 있는 충분히 깊은 신경망은 어떤 연속 함수(continuous function)도 근사할 수 있다.
