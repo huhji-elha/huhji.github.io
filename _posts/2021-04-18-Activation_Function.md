@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Introduce Activation Functions on Machine Learning"
+title:  "Introduce Activation Functions on Deep Learning"
 date:   2021-04-18 17:42:23 +0530
 categories: Sigmoid ReLU Leaky-ReLU ELU SELU
 use_math: true

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Introduce Basic Loss Function on Machine Learning"
+title:  "Introduce Basic Loss Functions on Machine Learning"
 date:   2021-03-31 15:28:11 +0530
 categories: MSE MAE RMSE Cross-Entropy
 use_math: true
