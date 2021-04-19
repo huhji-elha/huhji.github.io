@@ -51,11 +51,11 @@ Activation Function을 사용해 NonLinear한 데이터 분포가 학습되면 L
 
 함수값이 0과 1 사이에 있다는 것과 미분가능하다는 것이 장점이다.
 output이 0과 1로 표현되기 때문에 주로 Classification 문제에서 마지막 레이어에 많이 사용된다.
-또한 0과 1사이로 표현되었기 때문에 확률 개념으로 사용할 수도 있다.
 
 <span style="display:block;text-align:center">![sigmoid](https://user-images.githubusercontent.com/59910975/115139255-c57a3f00-a06b-11eb-94cf-a5068086ff40.png)</span>
 
-Sigmoid 함수는 back propagation을 적용하면 취약할 수 있다. 미분함수를 보면 x가 매우 크거나 매우 작을 때 모두 0에 근사하게 되는데 이는 Gradient Vanishing 현상(학습 연산 중에 0 값이 많이 곱해지므로 네트워크가 죽는 문제) 을 일으킨다.
+Sigmoid의 단점은 back propagation을 적용하면 취약할 수 있다는 것이다. 
+미분함수를 보면 x가 매우 크거나 매우 작을 때 모두 0에 근사하게 되는데, 이는 Gradient Vanishing 현상(학습 연산 중에 0 값이 많이 곱해지므로 네트워크가 죽는 문제) 을 일으킨다.
 
 다음은 Numpy로 구현한 Sigmoid 함수이다.
 
@@ -90,7 +90,7 @@ plt.show()
 
 <span style="display:block;text-align:center">$f'(x) = 1-(f(x))^2$</span>
 
-Sigmoid 함수처럼 tanh 함수도 S자 모양이고 연속적이며 미분가능하다.
+Sigmoid 함수처럼 tanh 함수도 S자 모양이고 연속적이며 미분가능하다. \
 사실상 Sigmoid 함수를 평행 이동한 것과 같다.
 
 <span style="display:block;text-align:center">![tangent](https://user-images.githubusercontent.com/59910975/115139256-c57a3f00-a06b-11eb-8634-d0d4a6cd1d71.png)</span>
@@ -133,7 +133,7 @@ ReLU함수는 0을 기준으로 양쪽이 선형함수이기 때문에 Sigmoid�
 
 <span style="display:block;text-align:center">![relu](https://user-images.githubusercontent.com/59910975/115139252-c4491200-a06b-11eb-902f-311a7d597cc5.png)</span>
 
-ReLU 함수는 이미지 연산을 할 때 유리한데, 이미지는 0~255 사이의 RGB 값으로 이루어진 데이터이기 때문에 음수가 나왔을 때 그 값에 0을 곱해 다음 Layer로 넘어가지 못하게 막는다. 
+ReLU 함수는 이미지 연산을 할 때 유리한데, 이미지는 0~255 사이의 RGB 값으로 이루어진 데이터이기 때문이다. 훈련 중 음수가 나왔을 때 그 값에 0을 곱해 다음 Layer로 넘어가지 못하게 막는다. 
 
 또한 ReLU는 Loss Function의 convexity를 어느 정도 보장한다. x=0을 제외하고는 Linear한 성질을 갖고 있기 때문이다. 
 
@@ -141,7 +141,7 @@ ReLU 함수는 이미지 연산을 할 때 유리한데, 이미지는 0~255 사�
 
 👉 신경망의 가중치가 음수로 바뀌어 Layer에서 내보내는 값이 음수 합이 되면 ReLU 함수의 그래디언트가 0이 되므로 경사하강법이 더이상 진행되지 않게 된다.
 
-다른 단점으로는, 양수 가중치가 곱해진다고 해도 이전 Layer의 값에 ReLU 그래디언트 값 1이 곱해져 그대로 전달되기 때문에 큰 값이 연속해서 연산 될 수 있다는 위험이 있다.
+다른 단점으로는, 양수 가중치가 곱해진다고 해도 이전 Layer의 값에 ReLU 그래디언트 값 1이 곱해져 그대로 전달되기 때문에 큰 값이 연속해서 연산 되는 위험이 있다.
 
 ```python
 # relu function
@@ -309,7 +309,7 @@ plt.show()
 일반적으로 좋은 성능을 기록하는 활성함수는
 SELU > ELU > Leaky RELU 계열 함수들 > ReLU > tanh > sigmoid 순이다.
 
-✅ 하지만 네트워크가 Self-normalize를 보장하지 않는 구조라면 ELU를 사용하는 것이 좋다. \
+✅ 하지만 네트워크가 Self-normalize를 보장하지 않는 구조라면 SELU보다 ELU를 사용하는 것이 좋다. \
 ✅ 추론 속도가 중요한 네트워크를 설계한다면 LeakyReLU를 고려한다.\
 ✅ 데이터셋이 소규모이고, 신경망이 과적합 되었다면 RReLU로 학습을 규제할 수 있다.\
 ✅ 데이터셋이 대규모라면 PReLU를 포함하는 것이 좋다.\
