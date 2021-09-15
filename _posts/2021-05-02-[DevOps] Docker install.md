@@ -107,7 +107,7 @@ sudo usermod -aG docker user
 
 ### 5. Docker "Hello World" 실행
 
-Docker 이미지를 받은 후 컨테이너에서 "Hello World" 실행합니다.
+Docker 이미지를 받은 후 컨테이너에서 "Hello World"를 출력합니다.
 
 ```bash
 docker container run centos:latest /bin/echo 'Hello World'
@@ -185,7 +185,7 @@ docker container run --name mini-web-server -d -p 80:80 nginx
 
 ![image10](https://user-images.githubusercontent.com/59910975/133408645-d4814f5f-de3b-4e81-bb46-0a4007394568.png)
 
-`http://[localhost](http://localhost):80` 에 접속해보면 다음과 같이 HTTP 프로토콜을 이용하여 localhost 주소의 80번 포트로 액세스되는 것을 확인할 수 있습니다.
+`http://localhost:80` 에 접속해보면 다음과 같이 HTTP 프로토콜을 이용하여 localhost 주소의 80번 포트로 액세스되는 것을 확인할 수 있습니다.
 
 ![image11](https://user-images.githubusercontent.com/59910975/133408646-bb0ab7be-787c-4a8c-a70a-91bd94c2fcb5.png)
 
