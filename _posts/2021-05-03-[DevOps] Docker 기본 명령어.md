@@ -113,7 +113,7 @@ docker image prune
 
 ![image03](https://user-images.githubusercontent.com/59910975/133795952-08c76d94-fe27-4eaa-a7b6-75489ed5cb3b.png)
 
-완벽한 IT 인프라 구축을 위한 Docker
+_ref: 완벽한 IT 인프라 구축을 위한 Docker_
 
 <br>
 
