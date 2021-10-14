@@ -6,8 +6,6 @@ categories: DevOps Golang
 use_math: true
 ---
 
-![HitCount](https://huhji.github.io/devops/golang/2021/09/13/DevOps-Golang-%EC%9E%90%EB%A3%8C%ED%98%95.html.svg)
-
 🐻 Golang의 특징에 따른 자료형과 변수 선언하기!
 
 _____________________________________
