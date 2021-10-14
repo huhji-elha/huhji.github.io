@@ -34,17 +34,6 @@
       {%- if site.plainwhite.tagline -%}
       <p class="tagline">{{ site.plainwhite.tagline }}</p>
 
-      <!--hits badge-->
-      <div style="text-align: center;">
-        <a
-          href="http://hits.dwyl.com/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}{{ page.url }}"
-          target="_blank">
-          <img
-            src="http://hits.dwyl.com/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}{{ page.url }}.svg"
-          />
-        </a>
-      </div>
-
       {%- endif -%}
       </div>
       {% capture footer %}
