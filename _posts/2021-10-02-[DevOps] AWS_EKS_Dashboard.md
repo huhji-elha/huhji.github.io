@@ -5,7 +5,7 @@ date:   2021-10-02 18:23:11 +0530
 categories: DevOps Kubernetes AWS Kubernetes-dashboard
 use_math: true
 ---
-🌌 AWS Cloud9 환경에서 EKS Cluster 구성하기
+🌌 AWS Cloud9환경에서 EKS Cluster를 모니터링하는 Kubernetes Dashboard 구축하기
 
 _____________________________________
 
