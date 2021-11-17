@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "[DevOps: Kubernetes] AWS EKS Load Balancer Controller"
-date:   2021-10-02 18:23:11 +0530
-categories: DevOps Kubernetes AWS Kubernetes eksctl load-balancer ALB NLB
+date:   2021-10-05 18:23:11 +0530
+categories: DevOps Kubernetes AWS Kubernetes eksctl load-balancer ALB
 use_math: true
 ---
 🌌 EKS Cluster에 AWS Load Balancer 생성하기
