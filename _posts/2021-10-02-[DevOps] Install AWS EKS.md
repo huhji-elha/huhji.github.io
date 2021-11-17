@@ -179,7 +179,9 @@ kubectl get nodes
 
 ## Console Credential 설정 (option)
 
-EKS 클러스터는 클러스터 접근 제어를 위해 IAM entity(사용자 또는 역할)를 사용합니다. 해당 rule은 **aws-auth**라는 ConfigMap에서 실행됩니다. 기본적으로 클러스터를 생성하는데 사용된 IAM entity에는 컨트롤 플레인에서 클러스터 RBAC 구성의 **system:masters** 권한이 자동적으로 부여됩니다.
+EKS 클러스터는 클러스터 접근 제어를 위해 IAM entity(사용자 또는 역할)를 사용한다. 해당 rule은 **aws-auth**라는 ConfigMap에서 실행된다. 
+
+기본적으로 클러스터를 생성하는데 사용된 IAM entity에는 컨트롤 플레인에서 클러스터 RBAC 구성의 **system:masters** 권한이 자동적으로 부여된다.
 
 ```bash
 # amazon resource number 정의하기
