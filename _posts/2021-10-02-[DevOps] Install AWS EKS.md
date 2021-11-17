@@ -9,8 +9,9 @@ use_math: true
 
 _____________________________________
 
+# AWS EKS Cluster Setting
 
-[AWS EKS Workshop](https://awskrug.github.io/eks-workshop/prerequisites/)의 내용 중 실행되지 않는 부분을 수정하여 재구성하였습니다.
+[AWS EKS Workshop](https://aws-eks-web-application.workshop.aws/ko/10-intro.html)의 내용 중 실행되지 않는 부분을 수정하여 재구성하였습니다.
 
 * 실습 환경은 [AWS 9Cloud](https://ap-southeast-1.console.aws.amazon.com/cloud9/home?region=ap-southeast-1)이며 싱가포르 리전에서 사용했습니다. 
 
@@ -202,7 +203,7 @@ kubectl describe configmap -n kube-system aws-auth
 
 ## EKS Cluster 삭제
 
-클러스터를 사용하고 다시 삭제할 때
+클러스터를 사용하고 다시 삭제할 때 사용한다. aws console에서는 바로 클러스터 삭제가 막혀있다.
 
 ```bash
 # EKS에서 실행중인 모든 서비스 목록 확인
