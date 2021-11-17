@@ -9,7 +9,6 @@ use_math: true
 
 _____________________________________
 
-# AWS EKS Cluster Setting
 
 [AWS EKS Workshop](https://aws-eks-web-application.workshop.aws/ko/10-intro.html)의 내용 중 실행되지 않는 부분을 수정하여 재구성하였습니다.
 
